@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Quiz</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <header>
+        <a href="../main/index.html" class="logo"><h1>Astronomy Quiz</h1></a>
+    </header>
+
+    <main>
+        <div class="game-container">
+            <div id="welcome-screen" class="welcome-screen fade-in">
+                <h1>Cosmic Challenge</h1>
+                <p class="credits-byline">Test your astronomy knowledge with Micah and Jonah</p>
+                
+                <p>Choose your difficulty level:</p>
+                
+                <div class="difficulty-buttons">
+                    <button id="easy-button" class="difficulty-button easy">Easy</button>
+                    <button id="medium-button" class="difficulty-button medium">Medium</button>
+                    <button id="hard-button" class="difficulty-button hard">Hard</button>
+                    <button id="extreme-button" class="difficulty-button hard">Extreme</button>
+                </div>
+                
+                <div class="difficulty-info">
+                    <p><strong>Easy:</strong> Basic astronomy facts about our solar system. <span class="grade-level"></span></p>
+                    <p><strong>Medium:</strong> Deeper space knowledge for amateur astronomers. <span class="grade-level"></span></p>
+                    <p><strong>Hard:</strong> Advanced astronomy concepts for serious space enthusiasts. <span class="grade-level"></span></p>
+                    <p><strong>Extreme:</strong> Advanced astronomy concepts for serious space enthusiasts. <span class="grade-level"></span></p>
+                </div>
+                
+                <div class="timer-settings">
+                    <p><strong>Time per question:</strong></p>
+                    <div class="timer-options">
+                        <div class="timer-option" data-time="0">No Limit</div>
+                        <div class="timer-option" data-time="15">15 seconds</div>
+                        <div class="timer-option" data-time="30">30 seconds</div>
+                        <div class="timer-option selected" data-time="60">60 seconds</div>
+                        <div class="timer-option" data-time="120">2 minutes</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="game-screen" class="game-screen-container" style="display: none;">
+                <button id="quit-button" class="quit-button">Quit Game</button>
+                
+                <div class="difficulty-display">Difficulty: <span id="current-difficulty">Medium</span></div>
+                <div class="score-display">Score: <span id="score">0</span> / <span id="total-questions">10</span></div>
+                
+                <div class="timer-container">
+                    Time: <span id="timer" class="timer">00:00</span>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                
+                <div id="question-container" class="question-card fade-in">
+                    <div id="question-text" class="question-text">Loading question...</div>
+                    <div id="options-container" class="options-container">
+                    </div>
+                    <div id="feedback" class="feedback"></div>
+                    <button id="next-button" class="next-button" style="display: none;">Next Question</button>
+                </div>
+                
+                <div id="result-container" class="result-container">
+                    <h2>Quiz Complete!</h2>
+                    <p>Your final score:</p>
+                    <div class="score"><span id="final-score">0</span> / <span id="final-total">10</span></div>
+                    <p id="result-message" class="result-message">Great job exploring the cosmos!</p>
+                    <div class="button-container">
+                        <button id="restart-button" class="restart-button">Play Again</button>
+                        <button id="home-button" class="home-button">Change Difficulty</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        const allQuestions = {
+            easy: [
+                {
+                    question: "Which planet is closest to the Sun?",
+                    options: ["Venus", "Earth", "Mars", "Mercury"],
+                    answer: "Mercury",
+                    explanation: "Mercury is the closest planet to the Sun at an average distance of about 36 million miles (58 million kilometers)."
+                },
+                {
+                    question: "Which planet has the most moons in our solar system?",
+                    options: ["Jupiter", "Saturn", "Uranus", "Neptune"],
+                    answer: "Saturn",
+                    explanation: "Saturn has 83 moons, which is slightly more than Jupiter's 79. Moons are still being discovered around the outer planets."
+                },
+                {
+                    question: "What is the Great Red Spot on Jupiter?",
+                    options: ["A volcanic eruption", "A massive hurricane-like storm", "An impact crater", "A lake of molten iron"],
+                    answer: "A massive hurricane-like storm",
+                    explanation: "The Great Red Spot is a persistent high-pressure region in Jupiter's atmosphere, producing an anticyclonic storm that has existed for at least 400 years."
+                },
+                {
+                    question: "Which of these is NOT a dwarf planet?",
+                    options: ["Pluto", "Ceres", "Eris", "Europa"],
+                    answer: "Europa",
+                    explanation: "Europa is one of Jupiter's moons, while Pluto, Ceres, and Eris are all classified as dwarf planets."
+                },
+                {
+                    question: "How long does it take for light from the Sun to reach Earth?",
+                    options: ["8 minutes", "8 seconds", "8 hours", "8 days"],
+                    answer: "8 minutes",
+                    explanation: "Light travels at approximately 299,792 kilometers per second. The Sun is about 150 million kilometers away, so it takes light about 8 minutes to reach Earth."
+                },
+                {
+                    question: "Which planet rotates on its side?",
+                    options: ["Venus", "Saturn", "Uranus", "Mars"],
+                    answer: "Uranus",
+                    explanation: "Uranus is tilted on its axis by about 98 degrees, causing it to rotate nearly on its side. This gives Uranus extreme seasons that last for decades."
+                },
+                {
+                    question: "What is the largest moon in our solar system?",
+                    options: ["Europa", "Titan", "Ganymede", "Luna"],
+                    answer: "Ganymede",
+                    explanation: "Ganymede, one of Jupiter's moons, is the largest moon in our solar system. It's even larger than the planet Mercury."
+                },
+                {
+                    question: "What is the asteroid belt located between?",
+                    options: ["Earth and Mars", "Mars and Jupiter", "Jupiter and Saturn", "Neptune and Uranus"],
+                    answer: "Mars and Jupiter",
+                    explanation: "The asteroid belt is a region of space between the orbits of Mars and Jupiter where most of the Solar System's asteroids are found."
+                },
+                {
+                    question: "Which of these objects is closest to Earth?",
+                    options: ["The Sun", "Alpha Centauri", "Sirius", "The Moon"],
+                    answer: "The Moon",
+                    explanation: "The Moon orbits Earth at an average distance of about 384,400 kilometers, making it our closest celestial neighbor."
+                },
+                {
+                    question: "Which planet is known as the 'Red Planet'?",
+                    options: ["Mars", "Venus", "Jupiter", "Mercury"],
+                    answer: "Mars",
+                    explanation: "Mars appears reddish because of iron oxide (rust) on its surface, giving it the nickname 'Red Planet'."
+                },
+                {
+                    question: "What is the name of our galaxy?",
+                    options: ["Andromeda", "Milky Way", "Triangulum", "Whirlpool"],
+                    answer: "Milky Way",
+                    explanation: "We live in the Milky Way galaxy, a spiral galaxy containing between 100 and 400 billion stars."
+                },
+                {
+                    question: "What causes the ocean tides on Earth?",
+                    options: ["Wind", "Earth's rotation", "The Moon's gravity", "Ocean currents"],
+                    answer: "The Moon's gravity",
+                    explanation: "The Moon's gravitational pull is the primary cause of tides on Earth, with the Sun also having a smaller influence."
+                },
+                {
+                    question: "Which planet has the shortest day?",
+                    options: ["Mercury", "Venus", "Earth", "Jupiter"],
+                    answer: "Jupiter",
+                    explanation: "Jupiter rotates once every 9 hours and 55 minutes, giving it the shortest day of any planet in our solar system."
+                },
+                {
+                    question: "What is a shooting star?",
+                    options: ["A star falling from space", "A star exploding", "A meteoroid entering Earth's atmosphere", "A comet"],
+                    answer: "A meteoroid entering Earth's atmosphere",
+                    explanation: "Shooting stars are actually small pieces of space debris (meteoroids) that burn up upon entering Earth's atmosphere."
+                },
+                {
+                    question: "What is the largest planet in our solar system?",
+                    options: ["Earth", "Saturn", "Jupiter", "Neptune"],
+                    answer: "Jupiter",
+                    explanation: "Jupiter is the largest planet in our solar system, with a mass more than twice that of all other planets combined."
+                }
+            ],
+            medium: [
+                {
+                    question: "Which planet has a day that lasts longer than its year?",
+                    options: ["Mercury", "Venus", "Mars", "Jupiter"],
+                    answer: "Venus",
+                    explanation: "Venus rotates very slowly on its axis, taking 243 Earth days to complete one rotation. However, it orbits the Sun in just 225 Earth days, making a day on Venus longer than its year."
+                },
+                {
+                    question: "What type of galaxy is the Milky Way?",
+                    options: ["Elliptical galaxy", "Irregular galaxy", "Spiral galaxy", "Lenticular galaxy"],
+                    answer: "Spiral galaxy",
+                    explanation: "The Milky Way is a barred spiral galaxy with a diameter of about 100,000-200,000 light-years containing 100-400 billion stars."
+                },
+                {
+                    question: "Which moon in our solar system has a thicker atmosphere than Earth?",
+                    options: ["Europa", "Titan", "Io", "Callisto"],
+                    answer: "Titan",
+                    explanation: "Titan, Saturn's largest moon, has a thick atmosphere of nitrogen and methane that's denser than Earth's atmosphere."
+                },
+                {
+                    question: "What phenomenon causes stars to twinkle when viewed from Earth's surface?",
+                    options: ["Stellar pulsation", "Atmospheric turbulence", "Cosmic radiation", "Gravitational lensing"],
+                    answer: "Atmospheric turbulence",
+                    explanation: "Stars appear to twinkle because their light is distorted as it passes through Earth's turbulent atmosphere. This effect is called scintillation."
+                },
+                {
+                    question: "Which planet has the strongest magnetic field?",
+                    options: ["Earth", "Jupiter", "Saturn", "Neptune"],
+                    answer: "Jupiter",
+                    explanation: "Jupiter has the strongest magnetic field of any planet in our solar system, about 14 times stronger than Earth's."
+                },
+                {
+                    question: "What is the Kuiper Belt?",
+                    options: ["A ring around Saturn", "A region of space beyond Neptune", "An asteroid field between Mars and Jupiter", "A cloud around the Sun"],
+                    answer: "A region of space beyond Neptune",
+                    explanation: "The Kuiper Belt is a region of the solar system beyond Neptune, similar to the asteroid belt but much larger, containing many small bodies made largely of ice."
+                },
+                {
+                    question: "What is the most abundant element in the universe?",
+                    options: ["Oxygen", "Carbon", "Helium", "Hydrogen"],
+                    answer: "Hydrogen",
+                    explanation: "Hydrogen is the most abundant element in the universe, making up about 75% of all baryonic mass."
+                },
+                {
+                    question: "What causes the aurora borealis (Northern Lights)?",
+                    options: ["Reflected moonlight", "Solar winds interacting with Earth's magnetosphere", "Atmospheric refraction of sunlight", "Chemical reactions in the clouds"],
+                    answer: "Solar winds interacting with Earth's magnetosphere",
+                    explanation: "The aurora borealis is caused when charged particles from the Sun (solar wind) interact with Earth's magnetic field and atmosphere."
+                },
+                {
+                    question: "How are elements heavier than iron formed?",
+                    options: ["In the cores of main sequence stars", "Through nuclear fusion", "In supernova explosions", "In planetary cores"],
+                    answer: "In supernova explosions",
+                    explanation: "Elements heavier than iron are primarily formed in the extreme conditions of supernova explosions, through a process called neutron capture."
+                },
+                {
+                    question: "Which spacecraft has traveled the furthest from Earth?",
+                    options: ["New Horizons", "Pioneer 10", "Voyager 1", "Voyager 2"],
+                    answer: "Voyager 1",
+                    explanation: "Launched in 1977, Voyager 1 is currently the most distant human-made object, having entered interstellar space in 2012."
+                },
+                {
+                    question: "What type of star will our Sun become after its main sequence life?",
+                    options: ["White dwarf", "Red giant", "Neutron star", "Black hole"],
+                    answer: "Red giant",
+                    explanation: "Our Sun will first expand into a red giant before eventually ending its life as a white dwarf."
+                },
+                {
+                    question: "What is a light-year?",
+                    options: ["The brightness of a star", "The time it takes light to reach Earth from the Sun", "The distance light travels in one year", "The life span of a star"],
+                    answer: "The distance light travels in one year",
+                    explanation: "A light-year is a unit of distance, equal to about 9.5 trillion kilometers, the distance light travels in one Earth year."
+                },
+                {
+                    question: "Which planet has the most extreme temperature variations?",
+                    options: ["Venus", "Mars", "Mercury", "Uranus"],
+                    answer: "Mercury",
+                    explanation: "Mercury experiences the most extreme temperature variations of any planet, from about -173°C to 427°C, due to its slow rotation and lack of substantial atmosphere."
+                },
+                {
+                    question: "What are cosmic rays?",
+                    options: ["Light rays from distant stars", "High-energy radiation from space", "Solar wind particles", "Radio waves from pulsars"],
+                    answer: "High-energy radiation from space",
+                    explanation: "Cosmic rays are high-energy protons and atomic nuclei that move through space at nearly the speed of light, originating from sources both inside and outside our galaxy."
+                },
+                {
+                    question: "Which planet has the highest surface temperature in our solar system?",
+                    options: ["Mercury", "Venus", "Mars", "Jupiter"],
+                    answer: "Venus",
+                    explanation: "Despite being farther from the Sun than Mercury, Venus has the highest surface temperature (about 462°C) due to its thick atmosphere creating a powerful greenhouse effect."
+                }
+            ],
+            hard: [
+            
+                {
+                    question: "What is the approximate age of the universe according to the Big Bang theory?",
+                    options: ["7.8 billion years", "10.4 billion years", "13.8 billion years", "20.3 billion years"],
+                    answer: "13.8 billion years",
+                    explanation: "According to the Big Bang theory and current cosmological observations, the universe is approximately 13.8 billion years old."
+                },
+                {
+                    question: "What term describes the theoretical boundary around a black hole beyond which nothing can escape?",
+                    options: ["Event horizon", "Schwarzschild radius", "Singularity", "Photon sphere"],
+                    answer: "Event horizon",
+                    explanation: "The event horizon is the boundary marking the point of no return around a black hole, beyond which nothing, not even light, can escape its gravitational pull."
+                },
+                {
+                    question: "What process powers main sequence stars like our Sun?",
+                    options: ["Nuclear fission", "Nuclear fusion", "Gravitational contraction", "Matter-antimatter annihilation"],
+                    answer: "Nuclear fusion",
+                    explanation: "Main sequence stars produce energy through nuclear fusion, primarily converting hydrogen into helium in their cores."
+                },
+                {
+                    question: "Which of these objects has the strongest gravitational field?",
+                    options: ["Neutron star", "White dwarf", "Red giant", "Brown dwarf"],
+                    answer: "Neutron star",
+                    explanation: "Neutron stars have extremely dense cores and strong gravitational fields, second only to black holes among stellar remnants."
+                },
+                {
+                    question: "What is the Chandrasekhar limit?",
+                    options: ["Maximum size of a planet", "Maximum mass of a white dwarf", "Minimum temperature of a star", "Maximum speed of a comet"],
+                    answer: "Maximum mass of a white dwarf",
+                    explanation: "The Chandrasekhar limit (about 1.4 solar masses) is the maximum mass a white dwarf star can have before electron degeneracy pressure cannot prevent gravitational collapse."
+                },
+                {
+                    question: "What is the primary material making up Saturn's rings?",
+                    options: ["Liquid hydrogen", "Methane ice", "Silicate rocks", "Water ice"],
+                    answer: "Water ice",
+                    explanation: "Saturn's rings are primarily composed of water ice particles ranging in size from micrometers to several meters."
+                },
+                {
+                    question: "What does the acronym SMBH commonly refer to in astronomy?",
+                    options: ["Solar Mass Black Hole", "Submillimeter Background Halo", "Supermassive Black Hole", "Southern Molecular Bright Haze"],
+                    answer: "Supermassive Black Hole",
+                    explanation: "SMBH refers to Supermassive Black Holes, which are millions to billions of times the mass of our Sun and are found at the centers of most large galaxies."
+                },
+                {
+                    question: "What is a Lagrangian point?",
+                    options: ["A position on a moon", "A position where gravitational forces balance", "The center of a black hole", "The equator of a planet"],
+                    answer: "A position where gravitational forces balance",
+                    explanation: "Lagrangian points are positions in space where the gravitational forces of two large bodies (like the Earth and Sun) precisely balance, allowing objects to maintain stable positions relative to both bodies."
+                },
+                {
+                    question: "Which law states that the orbit of a planet is an ellipse with the Sun at one focus?",
+                    options: ["Newton's First Law", "Hubble's Law", "Kepler's First Law", "Einstein's Law of General Relativity"],
+                    answer: "Kepler's First Law",
+                    explanation: "Kepler's First Law states that the path of each planet around the Sun is an ellipse with the Sun at one focus."
+                },
+                {
+                    question: "What does the cosmological redshift primarily indicate?",
+                    options: ["The temperature of a star", "The expansion of the universe", "The chemical composition of galaxies", "The age of a celestial object"],
+                    answer: "The expansion of the universe",
+                    explanation: "Cosmological redshift indicates that galaxies are moving away from us, providing evidence for the expansion of the universe."
+                },
+                {
+                    question: "What is the predicted fate of our universe according to the most widely accepted model?",
+                    options: ["Big Crunch", "Big Freeze", "Big Rip", "Big Bounce"],
+                    answer: "Big Freeze",
+                    explanation: "The Big Freeze (or Heat Death) is currently the most widely accepted theory, suggesting the universe will continue expanding forever, eventually becoming too cold to sustain life."
+                },
+                {
+                    question: "What is the Oort Cloud?",
+                    options: ["A nebula near the galactic center", "A type of stellar formation", "A theoretical cloud of icy objects at the edge of our solar system", "A dust cloud between Mars and Jupiter"],
+                    answer: "A theoretical cloud of icy objects at the edge of our solar system",
+                    explanation: "The Oort Cloud is a theoretical spherical shell of icy objects surrounding our solar system, believed to be the source of long-period comets."
+                },
+                {
+                    question: "What phenomenon can cause a star to become a pulsar?",
+                    options: ["Solar flares", "Supernova explosion", "Planetary collision", "Stellar merger"],
+                    answer: "Supernova explosion",
+                    explanation: "Pulsars form when massive stars die in supernova explosions, leaving behind rapidly rotating neutron stars that emit beams of radiation."
+                },
+                {
+                    question: "What is the Fermi Paradox concerned with?",
+                    options: ["The mathematical inconsistency in quantum mechanics", "The contradiction between the high probability of extraterrestrial life and the lack of evidence", "The impossibility of faster-than-light travel", "The divergence between general relativity and quantum theory"],
+                    answer: "The contradiction between the high probability of extraterrestrial life and the lack of evidence",
+                    explanation: "The Fermi Paradox highlights the contradiction between the high probability of extraterrestrial civilizations existing and the lack of contact or evidence for such civilizations."
+                },
+                {
+                    question: "Which astronomical phenomenon is described as a 'spaghettification'?",
+                    options: ["The stretching of matter as it approaches a black hole", "The formation of filamentary structures in nebulae", "The elongation of galaxies during collision", "The stretching of light waves in an expanding universe"],
+                    answer: "The stretching of matter as it approaches a black hole",
+                    explanation: "Spaghettification is the vertical stretching and horizontal compression of objects into long thin shapes (like spaghetti) as they fall into a black hole."
+                }
+            ],
+            extreme: [
+                {
+                    question: "Which physical mechanism explains the outward pressure that prevents gravitational collapse in main sequence stars?",
+                    options: ["Thermal convection", "Electron degeneracy pressure", "Radiation pressure", "Gas pressure from fusion reactions"],
+                    answer: "Gas pressure from fusion reactions",
+                    explanation: "In main sequence stars, the outward pressure from nuclear fusion reactions in the core counterbalances the inward pull of gravity, preventing collapse."
+                },
+                {
+                    question: "What is the Tolman-Oppenheimer-Volkoff limit?",
+                    options: ["Maximum mass of a neutron star", "Minimum size of a black hole", "Maximum sustainable temperature of a star", "Minimum mass for hydrogen fusion"],
+                    answer: "Maximum mass of a neutron star",
+                    explanation: "The TOV limit (approximately 2.1-2.3 solar masses) is the theoretical upper mass limit for neutron stars, beyond which they collapse into black holes."
+                },
+                {
+                    question: "According to the Lambda-CDM model, what percentage of the universe is composed of dark energy?",
+                    options: ["About 68%", "About 50%", "About 27%", "About 5%"],
+                    answer: "About 68%",
+                    explanation: "The Lambda-CDM model indicates that approximately 68% of the universe consists of dark energy, with dark matter accounting for 27% and ordinary matter only about 5%."
+                },
+                {
+                    question: "What is the significance of the Eddington luminosity in astrophysics?",
+                    options: ["Minimum brightness needed for stellar ignition", "Maximum brightness a star can achieve", "Brightness at which radiation pressure balances gravity", "Average luminosity of galaxies"],
+                    answer: "Brightness at which radiation pressure balances gravity",
+                    explanation: "The Eddington luminosity is the theoretical maximum luminosity where the outward radiation pressure equals the inward gravitational force, above which a star would eject its outer layers."
+                },
+                {
+                    question: "Which of these is NOT typically considered one of the main nucleosynthesis processes in stars?",
+                    options: ["s-process", "r-process", "p-process", "k-process"],
+                    answer: "k-process",
+                    explanation: "The main stellar nucleosynthesis processes are the s-process (slow neutron capture), r-process (rapid neutron capture), and p-process (proton capture). The k-process is not a standard nucleosynthesis pathway."
+                },
+                {
+                    question: "What is the Sunyaev-Zel'dovich effect?",
+                    options: ["Distortion of CMB radiation passing through galaxy clusters", "Redshift variation in binary star systems", "Gravitational lensing around neutron stars", "Polarization of light near black holes"],
+                    answer: "Distortion of CMB radiation passing through galaxy clusters",
+                    explanation: "The Sunyaev-Zel'dovich effect is the distortion of the cosmic microwave background radiation as it passes through hot gas in galaxy clusters due to inverse Compton scattering."
+                },
+                {
+                    question: "According to the holographic principle from theoretical physics, information about a volume of space is encoded on:",
+                    options: ["The center of mass", "A boundary enclosing that region", "Quantum entanglement between particles", "Gravitational waves emanating from the volume"],
+                    answer: "A boundary enclosing that region",
+                    explanation: "The holographic principle suggests that all the information contained within a volume of space can be represented as information encoded on the boundary of that region."
+                },
+                {
+                    question: "What is the BAO (Baryon Acoustic Oscillation) in cosmology?",
+                    options: ["Fluctuations in star brightness", "Regular fluctuations in galaxy distribution", "Oscillations of black hole event horizons", "Periodic shifts in spectral lines"],
+                    answer: "Regular fluctuations in galaxy distribution",
+                    explanation: "Baryon Acoustic Oscillations refer to regular, periodic fluctuations in the density of visible matter in the universe, resulting from acoustic waves in the early universe that created a characteristic scale in galaxy distribution."
+                },
+                {
+                    question: "The Shapiro time delay is associated with:",
+                    options: ["Time dilation near massive objects", "The difference between atomic and astronomical time", "Light travel time during stellar occultations", "Gravitational time delay of signals passing near massive objects"],
+                    answer: "Gravitational time delay of signals passing near massive objects",
+                    explanation: "The Shapiro time delay is a gravitational effect where electromagnetic signals take longer to travel through space warped by a massive object, as predicted by general relativity."
+                },
+                {
+                    question: "What is the significance of the Eddington-Weinberg relation in theoretical physics?",
+                    options: ["It connects quantum mechanics and general relativity", "It predicts the number of elementary particles", "It relates the age of the universe to its size", "It establishes the relationship between stellar mass and luminosity"],
+                    answer: "It predicts the number of elementary particles",
+                    explanation: "The Eddington-Weinberg relation suggests a connection between the number of elementary particles in the universe and fundamental physical constants, pointing to deep relationships between particle physics and cosmology."
+                },
+                {
+                    question: "Which effect causes the precession of Mercury's orbit that was unexplained by Newtonian mechanics?",
+                    options: ["Tidal forces from Venus", "Solar wind pressure", "General relativistic spacetime curvature", "Electromagnetic interaction with the solar corona"],
+                    answer: "General relativistic spacetime curvature",
+                    explanation: "The anomalous precession of Mercury's orbit was unexplained by Newton's theory but was correctly predicted by Einstein's general relativity, which accounts for the curvature of spacetime around the Sun."
+                },
+                {
+                    question: "What is the No-Hair Theorem in black hole physics?",
+                    options: ["Black holes emit no radiation", "Black holes can only be described by mass, charge and angular momentum", "Black holes cannot form from stellar collapse", "Black holes must have event horizons"],
+                    answer: "Black holes can only be described by mass, charge and angular momentum",
+                    explanation: "The No-Hair Theorem states that black holes can be completely characterized by just three externally observable parameters: mass, electric charge, and angular momentum. All other information about the matter that formed them is lost."
+                },
+                {
+                    question: "The Sachs-Wolfe effect relates to:",
+                    options: ["Polarization of starlight by interstellar dust", "Temperature fluctuations in the cosmic microwave background", "Redshift variations across galaxy clusters", "Gravitational lensing by dark matter"],
+                    answer: "Temperature fluctuations in the cosmic microwave background",
+                    explanation: "The Sachs-Wolfe effect describes how gravitational redshift and time dilation affect the temperature of the cosmic microwave background radiation, causing fluctuations that reveal the large-scale structure of the early universe."
+                },
+                {
+                    question: "Which process powers the unusually high-energy emissions from quasars?",
+                    options: ["Nuclear fusion", "Matter accretion onto supermassive black holes", "Antimatter annihilation", "Hawking radiation"],
+                    answer: "Matter accretion onto supermassive black holes",
+                    explanation: "Quasars derive their enormous energy output from the accretion of matter onto supermassive black holes at the centers of distant galaxies, converting gravitational potential energy into radiation."
+                },
+                {
+                    question: "The Tully-Fisher relation is an empirical relationship between:",
+                    options: ["Galaxy luminosity and rotation velocity", "Star temperature and mass", "Black hole mass and host galaxy size", "Pulsar period and magnetic field strength"],
+                    answer: "Galaxy luminosity and rotation velocity",
+                    explanation: "The Tully-Fisher relation is an empirical correlation between the luminosity (or stellar mass) of a spiral galaxy and its rotational velocity, used as a distance indicator in astronomy."
+                }
+            ]
+        };
+
+
+
+        let currentQuestions = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+        let currentDifficulty = "";
+        const questionsPerGame = 10;
+        let timePerQuestion = 60; 
+        let timerInterval;
+        let secondsRemaining;
+
+        // DOM elements
+        const welcomeScreen = document.getElementById('welcome-screen');
+        const gameScreen = document.getElementById('game-screen');
+        const currentDifficultyDisplay = document.getElementById('current-difficulty');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackElement = document.getElementById('feedback');
+        const nextButton = document.getElementById('next-button');
+        const scoreDisplay = document.getElementById('score');
+        const totalQuestionsDisplay = document.getElementById('total-questions');
+        const progressBar = document.getElementById('progress-bar');
+        const resultContainer = document.getElementById('result-container');
+        const questionContainer = document.getElementById('question-container');
+        const finalScore = document.getElementById('final-score');
+        const finalTotal = document.getElementById('final-total');
+        const resultMessage = document.getElementById('result-message');
+        const restartButton = document.getElementById('restart-button');
+        const homeButton = document.getElementById('home-button');
+        const timerDisplay = document.getElementById('timer');
+        const quitButton = document.getElementById('quit-button');
+        const timerOptions = document.querySelectorAll('.timer-option');
+
+        // Difficulty button elements
+        const easyButton = document.getElementById('easy-button');
+        const mediumButton = document.getElementById('medium-button');
+        const hardButton = document.getElementById('hard-button');
+        const extremeButton = document.getElementById('extreme-button');
+
+        // Select difficulty and start game
+        function selectDifficulty(difficulty) {
+            currentDifficulty = difficulty;
+            currentDifficultyDisplay.textContent = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+            
+            // Select questions for the chosen difficulty
+            const allQuestionsForDifficulty = allQuestions[difficulty];
+            
+            // Randomly select questionsPerGame questions
+            currentQuestions = getRandomQuestions(allQuestionsForDifficulty, questionsPerGame);
+            
+            // Update progress bar color based on difficulty
+            progressBar.className = `progress-bar ${difficulty}`;
+            
+            // Hide welcome screen, show game screen
+            welcomeScreen.style.display = 'none';
+            gameScreen.style.display = 'block';
+            questionContainer.style.display = 'block';
+            
+            // Start the game
+            initGame();
+        }
+
+        // Get random questions from the pool
+        function getRandomQuestions(questionPool, count) {
+            // Make a copy of the questions array
+            const shuffled = [...questionPool];
+            
+            // Shuffle the array
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            
+            // Return the first 'count' questions or all if fewer are available
+            return shuffled.slice(0, Math.min(count, shuffled.length));
+        }
+
+        // Initialize the game
+        function initGame() {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            
+            totalQuestionsDisplay.textContent = currentQuestions.length;
+            finalTotal.textContent = currentQuestions.length;
+            
+            resultContainer.style.display = 'none';
+            questionContainer.style.display = 'block';
+            
+            loadQuestion();
+            updateScore();
+        }
+
+        // Load current question
+        function loadQuestion() {
+            answered = false;
+            nextButton.style.display = 'none';
+            feedbackElement.className = 'feedback';
+            feedbackElement.textContent = '';
+            
+            if (currentQuestion < currentQuestions.length) {
+                const question = currentQuestions[currentQuestion];
+                questionText.textContent = question.question;
+                
+                // Clear previous options
+                optionsContainer.innerHTML = '';
+                
+                // Create option buttons
+                question.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.className = 'option-button';
+                    button.textContent = option;
+                    button.addEventListener('click', () => selectOption(option));
+                    optionsContainer.appendChild(button);
+                });
+                
+                // Update progress bar
+                const progress = (currentQuestion / currentQuestions.length) * 100;
+                progressBar.style.width = progress + '%';
+                
+                // Add fade-in effect
+                questionContainer.classList.remove('fade-in');
+                void questionContainer.offsetWidth; // Force reflow
+                questionContainer.classList.add('fade-in');
+                
+                // Start timer for new question
+                startTimer();
+            } else {
+                // End of quiz
+                showResults();
+            }
+        }
+
+        // Handle option selection
+        function selectOption(selectedOption) {
+            if (answered) return;
+            
+            answered = true;
+            stopTimer(); // Stop the timer when an answer is selected
+            
+            const question = currentQuestions[currentQuestion];
+            const isCorrect = selectedOption === question.answer;
+            
+            // Update score if correct
+            if (isCorrect) {
+                score++;
+                updateScore();
+            }
+            
+            // Highlight correct and incorrect options
+            const options = optionsContainer.querySelectorAll('.option-button');
+            options.forEach(option => {
+                if (option.textContent === question.answer) {
+                    option.classList.add('correct');
+                } else if (option.textContent === selectedOption && !isCorrect) {
+                    option.classList.add('incorrect');
+                }
+                option.disabled = true;
+            });
+            
+            // Display feedback
+            feedbackElement.textContent = question.explanation;
+            feedbackElement.className = isCorrect ? 'feedback correct' : 'feedback incorrect';
+            
+            // Show next button
+            nextButton.style.display = 'block';
+        }
+
+        // Update score display
+        function updateScore() {
+            scoreDisplay.textContent = score;
+        }
+
+        // Show final results
+        function showResults() {
+            stopTimer();
+            questionContainer.style.display = 'none';
+            resultContainer.style.display = 'block';
+            
+            finalScore.textContent = score;
+            
+            // Determine message based on score and difficulty
+            const percentage = (score / currentQuestions.length) * 100;
+            
+            if (percentage >= 90) {
+                if (currentDifficulty === 'hard') {
+                    resultMessage.textContent = "Extraordinary! You're a true astrophysicist!";
+                } else {
+                    resultMessage.textContent = "Outstanding! You're a cosmic genius!";
+                }
+            } else if (percentage >= 70) {
+                if (currentDifficulty === 'hard') {
+                    resultMessage.textContent = "Impressive! You have deep knowledge of the cosmos.";
+                } else {
+                    resultMessage.textContent = "Great job! You know your way around the cosmos.";
+                }
+            } else if (percentage >= 50) {
+                resultMessage.textContent = "Good effort! The universe still has some secrets for you.";
+            } else {
+                resultMessage.textContent = "Keep exploring the cosmos! There's still much to learn.";
+            }
+        }
+
+        // Return to welcome screen
+        function returnToHome() {
+            gameScreen.style.display = 'none';
+            welcomeScreen.style.display = 'block';
+        }
+
+        // Timer functionality
+        function startTimer() {
+            // Clear any existing timer
+            clearInterval(timerInterval);
+            
+            // If timePerQuestion is 0, it means "No Limit" is selected
+            if (timePerQuestion === 0) {
+                timerDisplay.textContent = "No Limit";
+                return;
+            }
+            
+            // Set starting time for this question
+            secondsRemaining = timePerQuestion;
+            updateTimerDisplay();
+            
+            // Remove urgent class
+            timerDisplay.classList.remove('timer-urgent');
+            
+            // Start countdown
+            timerInterval = setInterval(() => {
+                secondsRemaining--;
+                updateTimerDisplay();
+                
+                // Warning when time is running low (20% of time left)
+                if (secondsRemaining <= (timePerQuestion * 0.2) && !timerDisplay.classList.contains('timer-urgent')) {
+                    timerDisplay.classList.add('timer-urgent');
+                }
+                
+                // Time's up
+                if (secondsRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    // Auto-select wrong answer if time's up
+                    handleTimeUp();
+                }
+            }, 1000);
+        }
+        
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+        
+        function updateTimerDisplay() {
+            if (timePerQuestion === 0) {
+                timerDisplay.textContent = "No Limit";
+                return;
+            }
+            
+            const minutes = Math.floor(secondsRemaining / 60);
+            const remainingSecs = secondsRemaining % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSecs.toString().padStart(2, '0')}`;
+        }
+        
+        function handleTimeUp() {
+            if (!answered) {
+                // Show the correct answer when time's up
+                const question = currentQuestions[currentQuestion];
+                
+                // Highlight correct answer
+                const options = optionsContainer.querySelectorAll('.option-button');
+                options.forEach(option => {
+                    if (option.textContent === question.answer) {
+                        option.classList.add('correct');
+                    }
+                    option.disabled = true;
+                });
+                
+                // Display feedback
+                feedbackElement.textContent = "Time's up! " + question.explanation;
+                feedbackElement.className = 'feedback incorrect';
+                
+                // Mark as answered so the user can't click anymore
+                answered = true;
+                
+                // Show next button
+                nextButton.style.display = 'block';
+            }
+        }
+
+        // Set up timer options
+        timerOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                timerOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Set the timer value
+                timePerQuestion = parseInt(this.getAttribute('data-time'));
+            });
+        });
+
+        // Quit button functionality
+        quitButton.addEventListener('click', () => {
+            if (confirm("Are you sure you want to quit this game? Your progress will be lost.")) {
+                // Clear any running timer
+                stopTimer();
+                
+                // Return to welcome screen
+                returnToHome();
+            }
+        });
+
+        // Event listeners
+        easyButton.addEventListener('click', () => selectDifficulty('easy'));
+        mediumButton.addEventListener('click', () => selectDifficulty('medium'));
+        hardButton.addEventListener('click', () => selectDifficulty('hard'));
+        extremeButton.addEventListener('click', () => selectDifficulty('extreme'));
+        nextButton.addEventListener('click', () => {
+            currentQuestion++;
+            loadQuestion();
+        });
+
+        restartButton.addEventListener('click', () => {
+            // Get new random questions for the current difficulty
+            currentQuestions = getRandomQuestions(allQuestions[currentDifficulty], questionsPerGame);
+            initGame();
+        });
+        
+        homeButton.addEventListener('click', returnToHome);
+    </script>
+    
+    <audio id="correct-sound" src="https://assets.mixkit.co/active_storage/sfx/2190/2190-preview.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="https://assets.mixkit.co/active_storage/sfx/2058/2058-preview.mp3" preload="auto"></audio>
+    <audio id="complete-sound" src="https://assets.mixkit.co/active_storage/sfx/1010/1010-preview.mp3" preload="auto"></audio>
+</body>
+</html>

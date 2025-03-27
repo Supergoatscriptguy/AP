@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Belt | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="asteroid-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>The Asteroid Belt</h1>
+                <p class="hero-subtitle">Between Mars and Jupiter</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> What is the Asteroid Belt?</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>The Asteroid Belt is a region of space between Mars and Jupiter where millions of asteroids orbit the Sun. Despite what movies show, these space rocks are actually spread quite far apart, a spacecraft can safely travel through the belt without hitting anything!</p>
+                    
+                    <p>Most asteroids are leftover pieces that never formed into a planet. Scientists think Jupiter's strong gravity kept these rocks from coming together.</p>
+                    
+                    <ul class="planet-quick-facts">
+                        <li><strong>Location:</strong> Between Mars and Jupiter (about 2 or 3.5 times Earth's distance from the Sun)</li>
+                        <li><strong>Total Mass:</strong> All asteroids combined would make a ball smaller than our Moon</li>
+                        <li><strong>Largest Object:</strong> Ceres (940 km wide), which is now called a dwarf planet</li>
+                        <li><strong>Composition:</strong> Most are made of rock and metal, with some containing water ice</li>
+                    </ul>
+                    
+                    <p>Asteroids are important because they're like time capsules from when the solar system formed. Some scientists think asteroids brought water to Earth long ago. They also contain valuable metals that we might mine in the future!</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/asteroid_belt/InnerSolarSystem-en.png" alt="Asteroid Belt Illustration" class="planet-main-image">
+                    <p class="image-caption">Illustration of the Asteroid Belt between Mars and Jupiter.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="major-asteroids">
+            <h2><i class="fas fa-asterisk"></i> Famous Asteroids and Their Types</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/asteroid_belt/ceres.jpg" alt="Dwarf Planet Ceres">
+                    <figcaption class="image-caption">Ceres is the largest asteroid and is also called a dwarf planet. It even has a salty ocean under its surface!</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/asteroid_belt/vesta.jpg" alt="Asteroid Vesta">
+                    <figcaption class="image-caption">Vesta is the brightest asteroid as seen from Earth. It has mountains over twice as tall as Mount Everest.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/asteroid_belt/asteroid_types.jpg" alt="Asteroid Types">
+                    <figcaption class="image-caption">Different types of asteroids: C-type (carbon-rich), S-type (stony), and M-type (metallic).</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <h3>Major Asteroids:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Ceres:</strong> The biggest asteroid (about 940 km across) contains more fresh water than Earth and might have an underground ocean</li>
+                    <li><i class="fas fa-circle"></i> <strong>Vesta:</strong> The brightest asteroid has a giant impact crater that ejected pieces that eventually fell to Earth as meteorites</li>
+                    <li><i class="fas fa-circle"></i> <strong>Pallas:</strong> The third-largest asteroid has a highly tilted orbit compared to most objects in the belt</li>
+                </ul>
+                
+                <h3>Types of Asteroids:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>C-type:</strong> Dark, carbon-rich asteroids that may contain water - about 75% of all asteroids</li>
+                    <li><i class="fas fa-circle"></i> <strong>S-type:</strong> Stony asteroids made of silicate rock and metal - about 17% of asteroids</li>
+                    <li><i class="fas fa-circle"></i> <strong>M-type:</strong> Metal-rich asteroids containing mostly nickel and iron - these could be valuable for future space mining</li>
+                </ul>
+                
+                <p>NASA's Dawn mission visited both Vesta and Ceres, taking detailed pictures and learning about their composition. These missions taught us that some of these asteroids are more like small planets than just space rocks!</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="missions">
+            <h2><i class="fas fa-rocket"></i> Missions to the Asteroid Belt</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/asteroid_belt/dawn_spacecraft.jpg" alt="Dawn Spacecraft" class="planet-side-image">
+                    <p class="image-caption">NASA's Dawn spacecraft used ion propulsion to visit both Vesta and Ceres.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Several spacecraft have visited the Asteroid Belt, with NASA's Dawn mission being the most significant. It was the first spacecraft to orbit two different bodies beyond Earth.</p>
+                    
+                    <h3>Important Asteroid Missions:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Dawn (NASA):</strong> Launched in 2007, orbited Vesta from 2011-2012 and then Ceres from 2015 until the mission ended in 2018</li>
+                        <li><i class="fas fa-circle"></i> <strong>NEAR Shoemaker (NASA):</strong> First spacecraft to orbit and land on an asteroid (Eros), though it wasn't in the main belt</li>
+                        <li><i class="fas fa-circle"></i> <strong>Hayabusa (JAXA):</strong> Japanese mission that returned samples from asteroid Itokawa</li>
+                        <li><i class="fas fa-circle"></i> <strong>OSIRIS-REx (NASA):</strong> Collected samples from asteroid Bennu to return to Earth</li>
+                    </ul>
+                    
+                    <p>These missions have increased our understanding of asteroids. We learned that they're not just dead rocks, they are complex objects with Amazing geology and chemistry. Some even have their own tiny moons!</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="impacts">
+            <h2><i class="fas fa-meteor"></i> Asteroid Impacts and Earth</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>While most asteroids stay in the Asteroid Belt, some can be pushed into orbits that cross Earth's path. These are called Near-Earth Objects (NEOs), and scientists carefully track them to protect our planet.</p>
+                    
+                    <h3>Facts About Asteroid Impacts:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Dinosaur Extinction:</strong> A large asteroid impact 66 million years ago likely caused the extinction of the dinosaurs</li>
+                        <li><i class="fas fa-circle"></i> <strong>Chelyabinsk Event:</strong> In 2013, a small asteroid exploded over Russia, injuring about 1,500 people</li>
+                        <li><i class="fas fa-circle"></i> <strong>Tunguska Event:</strong> In 1908, an asteroid or comet exploded over Siberia, flattening 80 million trees</li>
+                        <li><i class="fas fa-circle"></i> <strong>Planetary Defense:</strong> NASA and other space agencies have programs to detect and track potentially hazardous asteroids</li>
+                    </ul>
+                    
+                    <p>Scientists are developing methods to protect Earth from dangerous asteroids. These include plans to deflect asteroids using spacecraft, as tested by NASA's DART mission in 2022, which successfully changed the orbit of asteroid Dimorphos.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/asteroid_belt/impact_crater.jpg" alt="Barringer Crater" class="planet-side-image">
+                    <p class="image-caption">Barringer Crater in Arizona was formed by a meteorite impact about 50,000 years ago.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-navigation">
+            <a href="mars.html" class="nav-button prev-planet"><i class="fas fa-arrow-left"></i> Mars</a>
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+            <a href="jupiter.html" class="nav-button next-planet">Jupiter <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturn | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="saturn-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Saturn</h1>
+                <p class="hero-subtitle">The Ringed Wonder</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> About Saturn</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Saturn is the sixth planet from the Sun and second-largest in our solar system. It's best known for its stunning ring system that makes it the most recognizable planet. Like Jupiter, Saturn is a gas giant made mostly of hydrogen and helium.</p>
+                    
+                    <p>Despite its massive size, Saturn is the least dense planet in our solar system, it would float in water if you could find a body of water big enough! This is because it's made mostly of light gases.</p>
+                    
+                    <ul class="planet-quick-facts">
+                        <li><strong>Diameter:</strong> around 73000 miles (9 times wider than Earth)</li>
+                        <li><strong>Distance from Sun:</strong> 869 millions miles (9.5 AU)</li>
+                        <li><strong>Day Length:</strong> 10.7 Earth hours</li>
+                        <li><strong>Year Length:</strong> 29.4 Earth years</li>
+                        <li><strong>Moons:</strong> 146 known moons (including Titan, the second-largest moon in the solar system)</li>
+                        <li><strong>Temperature:</strong> -288°F at cloud tops</li>
+                    </ul>
+                    
+                    <p>Like Jupiter, Saturn spins very quickly. This fast rotation causes the planet to bulge at its equator and flatten at its poles. Saturn's yellow and gold bands are less visible than Jupiter's, often appearing more blended together.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/saturn/saturn_cassini.jpg" alt="Saturn" class="planet-main-image">
+                    <p class="image-caption">Saturn as captured by NASA's Cassini spacecraft, showing its magnificent rings and subtle cloud bands.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="rings">
+            <h2><i class="fas fa-circle"></i> Saturn's Amazing Rings</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/saturn/ring_structure.jpg" alt="Saturn Ring Structure">
+                    <figcaption class="image-caption">Saturn's rings are divided into several main sections, labeled A through G, with the Cassini Division being the largest gap.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/saturn/ring_particles.jpg" alt="Ring Particles">
+                    <figcaption class="image-caption">The rings are made of billions of ice particles ranging in size from tiny dust grains to chunks as big as a house.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/saturn/ring_shadows.jpg" alt="Ring Shadows">
+                    <figcaption class="image-caption">The rings cast shadows on Saturn's surface, and Saturn casts shadows on its rings, creating beautiful visual effects.</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <h3>All About Saturn's Rings:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Composition:</strong> The rings are 99.9% pure water ice with traces of rocky material</li>
+                    <li><i class="fas fa-circle"></i> <strong>Size:</strong> The main rings span 175,000 miles across, but are only about 30 feet thick</li>
+                    <li><i class="fas fa-circle"></i> <strong>Age:</strong> Recent evidence suggests the rings may be young - perhaps less than 100 million years old</li>
+                    <li><i class="fas fa-circle"></i> <strong>Divisions:</strong> The rings have many gaps and divisions caused by moons that shepherd the ring particles or by orbital resonances</li>
+                    <li><i class="fas fa-circle"></i> <strong>Appearance:</strong> Though they look solid from Earth, the rings are actually made of countless individual particles orbiting Saturn like tiny moons</li>
+                </ul>
+                
+                <p>The rings might have formed when a moon or large comet got too close to Saturn and was torn apart by the planet's gravity. Scientists were surprised to discover that the rings are likely temporary, they're slowly raining material onto Saturn and might disappear in 100-300 million years!</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="moons">
+            <h2><i class="fas fa-moon"></i> Saturn's Fascinating Moons</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/saturn/titan.jpg" alt="Titan">
+                    <figcaption class="image-caption">Titan is the only moon with a thick atmosphere and the only world besides Earth with standing liquid on its surface.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/saturn/enceladus.jpg" alt="Enceladus">
+                    <figcaption class="image-caption">Enceladus has geysers that shoot water ice from an underground ocean through cracks in its icy surface.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/saturn/mimas.jpg" alt="Mimas">
+                    <figcaption class="image-caption">Mimas has a giant crater that makes it look like the Death Star from Star Wars!</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <h3>Saturn's Most Interesting Moons:</h3>
+                <p>Saturn has 146 moons, the most of any planet in our solar system. Here are some of the most fascinating:</p>
+                
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Titan:</strong> Saturn's largest moon is bigger than the planet Mercury. It has lakes and seas of liquid methane and ethane, with a thick orange atmosphere that hides its surface.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Enceladus:</strong> This small, icy moon has a global ocean beneath its frozen surface. It shoots geysers of salty water into space from its south pole, making it one of the most promising places to look for life.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Mimas:</strong> Known for its giant Herschel Crater that makes it resemble the Death Star from Star Wars.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Iapetus:</strong> Has one side as dark as coal and the other as bright as snow, creating a two-toned appearance.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Hyperion:</strong> Shaped like a potato and covered in deep craters, making it look like a giant sponge.</li>
+                </ul>
+                
+                <p>Some of Saturn's small moons act as "shepherds" that keep the rings in place with their gravity. NASA's Dragonfly mission will send a helicopter-like drone to explore Titan in the 2030s, looking for signs of potential life in its methane seas.</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="exploration">
+            <h2><i class="fas fa-rocket"></i> Exploring Saturn</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Only a few spacecraft have visited Saturn, but they've made amazing discoveries about this beautiful planet.</p>
+                    
+                    <h3>Key Saturn Missions:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Pioneer 11 (1979):</strong> The first spacecraft to fly by Saturn, providing our first close-up images</li>
+                        <li><i class="fas fa-circle"></i> <strong>Voyager 1 & 2 (1980-81):</strong> Made detailed observations of Saturn, its rings, and several moons</li>
+                        <li><i class="fas fa-circle"></i> <strong>Cassini-Huygens (2004-2017):</strong> Spent 13 years orbiting Saturn, "completely transforming our understanding of the planet and its moons"</li>
+                    </ul>
+                    
+                    <p>The Cassini mission was one of NASA's greatest successes. It discovered new moons, studied Saturn's weather and magnetic field, and revealed that Enceladus has a subsurface ocean that might harbor life. The Huygens probe (built by the European Space Agency) landed on Titan in 2005, becoming the most distant landing of any spacecraft.</p>
+                    
+                    <p>Cassini's mission ended in September 2017 when it was deliberately guided into Saturn's atmosphere. This "Grand Finale" prevented any possibility of contaminating Saturn's moons with Earth bacteria.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/saturn/cassini.jpg" alt="Cassini Spacecraft" class="planet-side-image">
+                    <p class="image-caption">The Cassini spacecraft, which orbited Saturn for 13 years, making countless discoveries about the planet and its moons.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-navigation">
+            <a href="jupiter.html" class="nav-button prev-planet"><i class="fas fa-arrow-left"></i> Jupiter</a>
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+            <a href="uranus.html" class="nav-button next-planet">Uranus <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

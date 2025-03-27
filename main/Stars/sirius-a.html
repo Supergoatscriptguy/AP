@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirius | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="stars.css">
+    <link rel="stylesheet" href="sirius-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html" class="active"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Sirius</h1>
+                <p class="hero-subtitle">The Dog Star</p>
+            </div>
+        </section>
+        
+        
+        <section class="star-section">
+            <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            <div class="star-content-flex">
+                <div class="star-text">
+                    <p>Sirius, also known as the Dog Star, is the brightest star in the night sky. Located in the constellation Canis Major, Sirius is actually a binary star system consisting of Sirius A and a faint white dwarf companion, Sirius B.</p>
+                    
+                    <p>Due to its intense brightness, Sirius has been a prominent fixture in the night sky throughout human history. Its name comes from the Greek word "seirios," meaning "scorching" or "glowing," which reflects its dazzling appearance.</p>
+                    
+                    <ul class="star-quick-facts">
+                        <li><strong>Classification:</strong> A-type main-sequence star (A1V)</li>
+                        <li><strong>Distance from Earth:</strong> 8.6 light-years</li>
+                        <li><strong>Diameter:</strong> About 1.7 times the Sun's diameter</li>
+                        <li><strong>Mass:</strong> 2.02 solar masses</li>
+                        <li><strong>Luminosity:</strong> 25.4 times brighter than the Sun</li>
+                        <li><strong>Surface Temperature:</strong> 9,940 K</li>
+                        <li><strong>Age:</strong> 200-300 million years</li>
+                    </ul>
+                    
+                    <p>Sirius appears so bright in our sky not only because it's intrinsically luminous but also because it's relatively close to our solar system, being one of our nearest stellar neighbors.</p>
+                </div>
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sirius/sirius_main.jpg" alt="Sirius" class="star-main-image">
+                    <p class="image-caption">Sirius A and B, with the tiny white dwarf companion visible to the lower left of the brilliant main star.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="binary-system">
+            <h2><i class="fas fa-link"></i> The Sirius Binary System</h2>
+            <div class="star-content-flex">
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sirius/sirius_binary.jpg" alt="Sirius Binary System" class="star-side-image">
+                    <p class="image-caption">Hubble Space Telescope image showing Sirius A and its much fainter companion, Sirius B.</p>
+                </div>
+                <div class="star-text">
+                    <p>Sirius is a binary star system consisting of two stars orbiting around their common center of mass. The discovery of Sirius B was a significant achievement in astronomical history.</p>
+                    
+                    <h3>Components of the Sirius System:</h3>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Sirius A:</strong> A main-sequence star about twice the mass of our Sun and 25 times more luminous</li>
+                        <li><i class="fas fa-circle"></i> <strong>Sirius B:</strong> A white dwarf star that was once more massive than Sirius A but has shed its outer layers</li>
+                        <li><i class="fas fa-circle"></i> <strong>Orbital Period:</strong> The two stars orbit each other approximately once every 50 years</li>
+                        <li><i class="fas fa-circle"></i> <strong>Separation:</strong> They are separated by about 20 astronomical units (AU) on average</li>
+                    </ul>
+                    
+                    <p>Sirius B is a fascinating object in its own right. Despite having about the same mass as our Sun, it has collapsed to roughly the size of Earth. This means its material is incredibly dense—a teaspoon of its matter would weigh about 5 tons on Earth.</p>
+                    
+                    <p>The binary nature of Sirius was first predicted by Friedrich Bessel in 1844 based on wobbles in Sirius A's motion. Sirius B was first observed in 1862 by Alvan Clark, confirming Bessel's hypothesis.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="cultural">
+            <h2><i class="fas fa-book"></i> Historical and Cultural Significance</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/stars/sirius/egyptian_sirius.jpg" alt="Ancient Egyptian Sirius">
+                    <figcaption class="image-caption">Ancient Egyptian depiction of Sirius, which they connected with the goddess Sopdet (Sothis).</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/stars/sirius/dogon_sirius.jpg" alt="Dogon Sirius Artifacts">
+                    <figcaption class="image-caption">Dogon tribe artifacts related to their knowledge of Sirius, which has puzzled some anthropologists.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/stars/sirius/sirius_constellation.jpg" alt="Canis Major Constellation">
+                    <figcaption class="image-caption">Sirius as seen within the Canis Major constellation, which represents the larger of Orion's hunting dogs.</figcaption>
+                </figure>
+            </div>
+            <div class="star-text">
+                <p>As the brightest star in the night sky, Sirius has played a significant role in many cultures throughout human history.</p>
+                
+                <h3>Cultural References:</h3>
+                <ul class="star-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Ancient Egypt:</strong> The heliacal rising of Sirius (when it becomes visible just before sunrise) coincided with the annual flooding of the Nile, marking the beginning of the Egyptian new year</li>
+                    <li><i class="fas fa-circle"></i> <strong>Ancient Greece and Rome:</strong> The appearance of Sirius in summer was associated with the "dog days" of intense heat</li>
+                    <li><i class="fas fa-circle"></i> <strong>Polynesian Navigation:</strong> Used as an important navigational star by Polynesian voyagers</li>
+                    <li><i class="fas fa-circle"></i> <strong>Dogon People:</strong> The Dogon tribe of Mali reportedly had knowledge of Sirius B before its scientific discovery, which has been a subject of controversy</li>
+                </ul>
+                
+                <p>The term "dog days of summer" comes directly from Sirius's position in Canis Major (the Greater Dog) constellation. During summer in the Northern Hemisphere, Sirius rises and sets with the sun, adding its heat to our star's and supposedly contributing to the hottest days of the year.</p>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="observations">
+            <h2><i class="fas fa-telescope"></i> Modern Observations</h2>
+            <div class="star-content-flex">
+                <div class="star-text">
+                    <p>Despite being one of our nearest stellar neighbors, studying Sirius presents challenges due to its extreme brightness, which can overwhelm sensitive instruments.</p>
+                    
+                    <h3>Scientific Research:</h3>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Astrometric Studies:</strong> Precise measurements of Sirius's position have helped refine our understanding of stellar motion</li>
+                        <li><i class="fas fa-circle"></i> <strong>White Dwarf Physics:</strong> Sirius B provides valuable data for testing theories about the final stages of stellar evolution</li>
+                        <li><i class="fas fa-circle"></i> <strong>Possible Third Component:</strong> Some astronomers have suggested there might be a third star in the system, but this remains unconfirmed</li>
+                        <li><i class="fas fa-circle"></i> <strong>Color Controversy:</strong> Historical records suggest Sirius may have appeared reddish in ancient times, contradicting its current blue-white appearance</li>
+                    </ul>
+                    
+                    <h3>The "Red Sirius" Mystery:</h3>
+                    <p>Historical texts from ancient Greece, Rome, and China describe Sirius as red or ruddy, yet today it appears distinctly blue-white. This discrepancy has led to various theories:</p>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Stellar Evolution:</strong> Perhaps Sirius has changed over the past 2,000 years (considered unlikely)</li>
+                        <li><i class="fas fa-circle"></i> <strong>Atmospheric Effects:</strong> Ancient observers might have seen Sirius when it was low on the horizon, making it appear red due to atmospheric scattering</li>
+                        <li><i class="fas fa-circle"></i> <strong>Cultural Interpretations:</strong> Ancient color terminology may have differed from our modern understanding</li>
+                    </ul>
+                </div>
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sirius/sirius_spectrum.jpg" alt="Spectrum of Sirius" class="star-diagram">
+                    <p class="image-caption">Spectral analysis of Sirius showing its characteristic absorption lines that identify it as an A-type main sequence star.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="future">
+            <h2><i class="fas fa-clock"></i> The Future of Sirius</h2>
+            <div class="star-content-flex">
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sirius/sirius_future.jpg" alt="Future Evolution of Sirius" class="star-side-image">
+                    <p class="image-caption">Artist's impression of what Sirius A might look like in the future as it evolves into a red giant.</p>
+                </div>
+                <div class="star-text">
+                    <p>While Sirius A is currently in its stable main sequence phase, its future will bring dramatic changes to the system.</p>
+                    
+                    <h3>Stellar Evolution Timeline:</h3>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Present:</strong> Sirius A is a main sequence star with about 200-300 million years of age</li>
+                        <li><i class="fas fa-circle"></i> <strong>Future Main Sequence:</strong> Will continue fusing hydrogen for approximately 500-600 million more years</li>
+                        <li><i class="fas fa-circle"></i> <strong>Red Giant Phase:</strong> Will expand significantly, becoming much more luminous</li>
+                        <li><i class="fas fa-circle"></i> <strong>White Dwarf Fate:</strong> Eventually, Sirius A will lose its outer layers and become a white dwarf like Sirius B</li>
+                    </ul>
+                    
+                    <p>The future red giant phase of Sirius A will likely have significant effects on its orbit with Sirius B. Their orbital dynamics will change as Sirius A loses mass, potentially leading to a wider separation between the two stars.</p>
+                    
+                    <p>Sirius is currently approaching our solar system and will reach its closest point in about 60,000 years, when it will appear even brighter in Earth's night sky. After that, it will gradually recede as our relative motions carry us apart again.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-navigation">
+            <a href="Sun.html" class="nav-button prev-star"><i class="fas fa-arrow-left"></i> The Sun </a>
+            <a href="../stars.html" class="nav-button back-to-stars"><i class="fas fa-th"></i> All Stars </a>
+
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

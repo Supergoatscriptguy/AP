@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="mercury-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Mercury</h1>
+                <p class="hero-subtitle">The Swift Planet</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Mercury is the smallest and innermost planet in the Solar System. It's also the fastest, orbiting the Sun in just 88 Earth days (Thats why we say "The Swift Planet").</p>
+                    <p>This rocky world has virtually no atmosphere to retain heat, resulting in extreme temperature variations from scorching hot during the day to freezing cold at night.</p>
+                    <ul class="planet-quick-facts">
+                        <li><strong>Distance from Sun:</strong> 22-43 million miles (0.24-0.47 AU)</li>
+                        <li><strong>Diameter:</strong> 3,032 miles (4,879 kilometers)</li>
+                        <li><strong>Length of Day:</strong> 59 Earth days</li>
+                        <li><strong>Length of Year:</strong> 88 Earth days</li>
+                        <li><strong>Surface Temperature:</strong> -280°F to 800°F (-173°C to 427°C)</li>
+                    </ul>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mercury/Mercury_wholeview.jpg" alt="Mercury Full Disk" class="planet-main-image">
+                    <p class="image-caption">Mercury as imaged by NASA's MESSENGER spacecraft, showing its cratered surface.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="atmosphere">
+            <h2><i class="fas fa-wind"></i> Mercury's Atmosphere</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Mercury doesn't have a real atmosphere like Earth. Instead, it has what scientists call an exosphere, which is an extremely thin layer of gases.</p>
+                    
+                    <div class="feature-card">
+                        <p>Note: We haven't included an image of Mercury's exosphere because we couldn't find one from a reliable scientific source, good pictures are limited (A future update might bring this!)</p>
+                    </div>
+                    
+                    <h3>Key Characteristics:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Composition:</strong> Mostly oxygen, sodium, hydrogen, helium, and some potassium atoms.</li>
+                        <li><i class="fas fa-circle"></i> <strong>Pressure:</strong> Almost none, about one trillionth of Earth's atmospheric pressure.</li>
+                        <li><i class="fas fa-circle"></i> <strong>Temperature Range:</strong> Extreme changes from 800°F (430°C) during the day to -290°F (-180°C) at night.</li>
+                        <li><i class="fas fa-circle"></i> <strong>Notable Features:</strong> The exosphere is constantly changing as atoms escape to space and new ones are added from the surface of mercury.</li>
+                        <li><i class="fas fa-circle"></i> <strong>Interactions:</strong> Solar wind and small meteorites hitting Mercury's surface kick up atoms that become part of the exosphere.</li>
+                    </ul>
+                    <p>Without a real atmosphere, there's nothing to trap heat on Mercury, which is why temperatures change so drastically between day and night!</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="structure">
+            <h2><i class="fas fa-layer-group"></i> Internal Structure & Magnetic Field</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Mercury is built differently than other planets. It has a huge metal core that takes up most of the planet!</p>
+                    
+                    <h3>Mercury's Layers:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Core:</strong> A massive iron core that makes up about 85% of Mercury's size. The outer part is liquid metal while the inner part is solid.</li>
+                        <li><i class="fas fa-circle"></i> <strong>Mantle:</strong> A thin rock like layer around the core, that is only about 310-435 miles thick.</li>
+                        <li><i class="fas fa-circle"></i> <strong>Crust:</strong> The thin outer layer of rock that we would stand on, only about 100-300 km thick with many cracks and ridges.</li>
+                    </ul>
+                    
+                    <p>Mercury has a magnetic field like Earth, but much weaker, only about 1% as strong. Scientists say the moving liquid metal in Mercury's outer core creates this magnetic field, like a massive magnet inside the planet!</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mercury/Mercury_with_magnetic_field_and_layers.jpg" alt="Mercury Interior Diagram" class="planet-diagram">
+                    <p class="image-caption">Mercury's inside layers and magnetic field. The core takes up most of the planet!</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="messenger">
+            <h2><i class="fas fa-rocket"></i> The MESSENGER Mission</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mercury/messengerbeingbuilt.jpg" alt="MESSENGER Spacecraft" class="planet-side-image">
+                    <p class="image-caption">MESSENGER spacecraft being assembled before its launch to Mercury.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Mercury Surface, Space Environment, Geochemistry, and Ranging (MESSENGER) was NASA's first mission to orbit Mercury, revealing groundbreaking details about the innermost planet.</p>
+                    
+                    <h3>Mission Highlights:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Launch Date:</strong> August 3, 2004</li>
+                        <li><i class="fas fa-circle"></i> <strong>Mercury Arrival:</strong> March 18, 2011</li>
+                        <li><i class="fas fa-circle"></i> <strong>End of Mission:</strong> April 30, 2015 (crashed into Mercury's surface)</li>
+                        <li><i class="fas fa-circle"></i> <strong>Mapping Coverage:</strong> 100% of Mercury's surface</li>
+                        <li><i class="fas fa-circle"></i> <strong>Key Discoveries:</strong> Confirmed water/ice at Mercury's poles, discovered high concentrations of magnesium and calcium on the surface, as well as mapping the planet's magnetic field</li>
+                    </ul>
+                    
+                    <p>After completing its objectives, MESSENGER continued to orbit Mercury for an extended mission, gathering around 277,000 images and a wealth of scientific data before running out of fuel.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="phases">
+            <h2><i class="fas fa-moon"></i> Phases of Mercury</h2>
+            <p class="section-intro">Mercury, like the Moon, displays different phases as it orbits the Sun.</p>
+            <div class="phases-container">
+                <figure class="phase">
+                    <img src="../../assets/planets/mercury/phases.jpg" alt="Mercury Phases">
+                    <figcaption class="image-caption">The different phases of Mercury as seen from Earth throughout its orbit around the Sun.</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <p>Mercury shows phases similar to Venus/Moon because of its position compared to Earth and the Sun. These phases occur as our viewing angle of Mercury's bright hemisphere changes during its orbit.</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="surface">
+            <h2><i class="fas fa-mountain"></i> Surface of Mercury</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/mercury/The_Mighty_Caloris.jpg" alt="Caloris Basin">
+                    <figcaption class="image-caption">The Caloris Basin is one of the largest impact craters in the solar system, spanning about 1,550 km (960 miles) in diameter.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/mercury/Picasso_crater.jpg" alt="Mercury Craters">
+                    <figcaption class="image-caption">Picasso crater, named after Picasso, features a "distinctive pattern of ridges and valleys that resemble abstract art".</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/mercury/Innercraterplains.jpg" alt="Mercury Plains">
+                    <figcaption class="image-caption">Inner crater plains on Mercury are smooth areas that formed when ancient lava flows filled the floors of impact craters.</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <h3>Notable Surface Features:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Craters:</strong> Mercury's surface is heavily cratered like the Moon (result of no atmosphere), with Picasso crater being one of its most unique impact features.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Fun Facts:</strong> Although Mercury looks a bit dead now, it used to have widespread volcanic activity, with ancient lava flows covering around 6% of its surface. Evidence suggests volcanic eruptions ended about 3.5 billion years ago.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Plains:</strong> Mercury has smooth plains areas, particularly inside craters, that were formed by ancient volcanic lava flows filling impact basins.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Poles:</strong> Despite being the closest to the Sun, Mercury is permanently dark at its poles where temperatures never rise above -280°F (-173°C), allowing water/ice to exist even on this scorching planet.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Major Impact Features:</strong> The Caloris Basin is Mercury's most notable impact feature, created by an asteroid collision early in the planet's history.</li>
+                </ul>
+            </div>
+        </section>
+        
+        
+        <section class="planet-navigation">
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+            <a href="venus.html" class="nav-button next-planet">Venus</a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

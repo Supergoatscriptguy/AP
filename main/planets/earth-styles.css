@@ -1,0 +1,94 @@
+
+:root {
+    --planet-primary: #4ca6ff;
+    --planet-secondary: #1e5799;
+    --planet-accent: #62bdff;
+    --planet-glow: rgba(76, 166, 255, 0.4);
+}
+
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../../assets/planets/earth/earth_banner.jpg') center/cover no-repeat;
+}
+
+
+.hero-content h1 {
+    text-shadow: 0 0 20px var(--planet-glow);
+}
+
+.hero-subtitle {
+    color: var(--planet-primary);
+}
+
+
+.planet-section {
+    border: 1px solid rgba(76, 166, 255, 0.2);
+}
+
+.planet-section h2 {
+    color: var(--planet-primary);
+    border-bottom-color: rgba(76, 166, 255, 0.3);
+}
+
+
+.planet-quick-facts {
+    background-color: rgba(76, 166, 255, 0.1);
+    border-left: 3px solid var(--planet-primary);
+}
+
+
+.planet-main-image, .planet-side-image {
+    border: 2px solid rgba(76, 166, 255, 0.4);
+}
+
+
+.feature-card {
+    border-left: 3px solid var(--planet-primary);
+}
+
+.feature-card h3 {
+    color: var(--planet-primary);
+}
+
+
+#interactive {
+    border: 1px solid rgba(76, 166, 255, 0.3);
+}
+
+.fact-display {
+    border-left: 3px solid var(--planet-primary);
+}
+
+.fact-btn {
+    background-color: rgba(76, 166, 255, 0.1);
+    color: var(--planet-primary);
+    border: 1px solid var(--planet-primary);
+}
+
+.fact-btn:hover, .fact-btn.active {
+    background-color: var(--planet-primary);
+    color: #0a0e17;
+    box-shadow: 0 5px 15px rgba(76, 166, 255, 0.4);
+}
+
+.fact-display h3 {
+    color: var(--planet-primary);
+}
+
+
+.nav-button {
+    color: var(--planet-primary);
+    border: 1px solid var(--planet-primary);
+}
+
+.nav-button:hover {
+    background-color: var(--planet-primary);
+    color: #0a0e17;
+    box-shadow: 0 5px 15px rgba(76, 166, 255, 0.4);
+}
+
+
+.particle {
+    background-color: rgba(76, 166, 255, 0.5);
+}

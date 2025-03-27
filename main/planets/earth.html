@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth</title>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="earth-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Earth</h1>
+                <p class="hero-subtitle">Our home</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Earth is the third planet from the Sun and the only object in the Universe known to host life.</p>
+                    <p>The Earth's surface is 71% covered with water, with the remainder consisting of continents and islands.</p>
+                    <ul class="planet-quick-facts">
+                        <li><strong>Distance from Sun:</strong> 93 million miles (1 AU)</li>
+                        <li><strong>Diameter:</strong> 7,918 miles</li>
+                        <li><strong>Length of Day:</strong> 24 hours</li>
+                        <li><strong>Length of Year:</strong> 365.25 days</li>
+                        <li><strong>Surface Temperature:</strong> -88°F to 136°F</li>
+                    </ul>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/earth/Earth.webp" alt="Earth Full Disk" class="planet-main-image">
+                    <p class="image-caption">Earth seen from space, showing the oceans, clouds, and continents.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-list-alt"></i> Key Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3><i class="fas fa-wind"></i> Life-Supporting Atmosphere</h3>
+                    <p>Earth's rare atmosphere consists of 78% nitrogen, 21% oxygen, and small amounts of other gases. The ozone layer in the stratosphere protects humans, animals, and plants from harmful ultraviolet radiation from the Sun.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-magnet"></i> Magnetic Field</h3>
+                    <p>Earth's iron core generates a magnetic field that protects the Earth from solar radiation and cosmic rays, allowing life.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-mountain"></i> Dynamic Surface</h3>
+                    <p>Plate tectonics slowly rearange Earth's surface, which is why we have mountains, valleys, and other features.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-lightbulb"></i> Did You Know?</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> Earth is the densest planet in our solar system.</li>
+                        <li><i class="fas fa-circle"></i> It's the only planet not named after a Greek or Roman god.</li>
+                        <li><i class="fas fa-circle"></i> Our Moon, is slowly moving away from us at about 3.8 cm per year.</li>
+                        <li><i class="fas fa-circle"></i> Earth compared to the Moon is HUGE.</li>
+                    </ul>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/earth/EarthMoon.jpg" alt="Earth and Moon" class="planet-side-image">
+                    <p class="image-caption">Earth and the Moon to scale, showing their relative sizes.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="planet-section" id="interactive">
+            <h2><i class="fas fa-hand-pointer"></i> Explore Earth Facts</h2>
+            <div class="interactive-container">
+                <div class="fact-display" id="factContent">
+                    <p>Click any button below to learn interesting facts about Earth!</p>
+                </div>
+                <div class="fact-buttons">
+                    <button class="fact-btn" id="fact1"><i class="fas fa-globe-americas"></i> Land & Ocean</button>
+                    <button class="fact-btn" id="fact3"><i class="fas fa-cloud-sun"></i> Climate</button>
+                    <button class="fact-btn" id="fact4"><i class="fas fa-users"></i> Human Impact</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="planet-navigation">
+            <a href="venus.html" class="nav-button prev-planet">Venus</a>
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+            <a href="mars.html" class="nav-button next-planet">Mars</a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script src="../scripts/stars-background.js"></script>
+    <script>
+        // Earth facts interactive feature
+        document.addEventListener('DOMContentLoaded', function() {
+            const factContent = document.getElementById('factContent');
+            const facts = {
+                'fact1': '<h3><i class="fas fa-globe-americas"></i> Land & Ocean</h3><p>Earth\'s surface is around 29% land and 71% water. The Pacific Ocean alone covers about one-third of Earth.\'s surface. The highest point on Earth is Mount Everest at around 29000 feet.</p>',
+                'fact3': '<h3><i class="fas fa-cloud-sun"></i> Climate</h3><p>Earth\'s climate has changed dramatically over around its 4.5 billion year history . There have been at least five ice ages, with the most recent beginning about 2.6 million years ago. Inbetween ice ages, Earth has experienced warmer periods where even the polar regions were free of ice.</p>',
+                'fact4': '<h3><i class="fas fa-users"></i> Human Impact</h3><p>Humans have significantly altered Earth\'s surface, atmosphere, ecosystems.. About 75% of land environments and 66% of water environments have been significantly affecteD by human actions. Climate change, deforestation, pollution, and destruction are some of the most common and the most significant human impacts.</p>'
+            };
+            
+            document.querySelectorAll('.fact-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const factId = this.id;
+                    factContent.innerHTML = facts[factId];
+                    
+                    // Highlight active button
+                    document.querySelectorAll('.fact-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+
+            // Create floating particles
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

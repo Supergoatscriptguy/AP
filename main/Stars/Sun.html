@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sun | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="stars.css">
+    <link rel="stylesheet" href="sun-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html" class="active"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>The Sun</h1>
+                <p class="hero-subtitle">Our Life-Giving Star</p>
+            </div>
+        </section>
+        
+        
+        <section class="star-section">
+            <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            <div class="star-content-flex">
+                <div class="star-text">
+                    <p>The Sun is the star at the center of our Solar System. It is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. The Sun radiates energy as electromagnetic radiation, including visible light, ultraviolet light, infrared radiation, radio waves, X-rays, and gamma rays.</p>
+                    
+                    <p>As the largest object in our solar system, the Sun contains about 99.8% of the system's total mass. Without the Sun's intense energy, there would be no life on Earth. Its gravitational influence keeps the Earth and other planets in orbit around it.</p>
+                    
+                    <ul class="star-quick-facts">
+                        <li><strong>Classification:</strong> G-type main-sequence star (G2V)</li>
+                        <li><strong>Distance from Earth:</strong> 149.6 million km (1 Astronomical Unit)</li>
+                        <li><strong>Diameter:</strong> 1,392,684 km (109 times Earth's diameter)</li>
+                        <li><strong>Mass:</strong> 1.989 × 10^30 kg (333,000 times Earth's mass)</li>
+                        <li><strong>Surface Temperature:</strong> 5,500°C (9,940°F)</li>
+                        <li><strong>Core Temperature:</strong> 15 million°C (27 million°F)</li>
+                        <li><strong>Age:</strong> 4.6 billion years (middle-aged)</li>
+                    </ul>
+                    
+                    <p>The Sun is currently in its main sequence phase, where it will remain for approximately another 5 billion years before expanding into a red giant and eventually becoming a white dwarf.</p>
+                </div>
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sun/sun_main.jpg" alt="The Sun" class="star-main-image">
+                    <p class="image-caption">The Sun as seen in visible light, showing its photosphere with several sunspots visible.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="structure">
+            <h2><i class="fas fa-layer-group"></i> Structure and Composition</h2>
+            <div class="star-content-flex">
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sun/sun_layers.jpg" alt="Sun's Structure" class="star-side-image">
+                    <p class="image-caption">Diagram showing the Sun's internal structure from the core to the corona.</p>
+                </div>
+                <div class="star-text">
+                    <p>The Sun has a layered structure, much like an onion. From the inside out, these layers are the core, radiative zone, convective zone, photosphere, chromosphere, transition region, and corona.</p>
+                    
+                    <h3>Layers of the Sun:</h3>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Core:</strong> The central region where nuclear fusion converts hydrogen to helium, reaching temperatures of 15 million°C</li>
+                        <li><i class="fas fa-circle"></i> <strong>Radiative Zone:</strong> Region where energy travels outward through radiation, taking up to 170,000 years to pass through</li>
+                        <li><i class="fas fa-circle"></i> <strong>Convective Zone:</strong> The outer layer of the Sun's interior where energy is transported by convection (hot plasma rising, cooling, and sinking)</li>
+                        <li><i class="fas fa-circle"></i> <strong>Photosphere:</strong> The visible "surface" of the Sun with a temperature of about 5,500°C</li>
+                        <li><i class="fas fa-circle"></i> <strong>Chromosphere:</strong> A thin layer above the photosphere that appears as a reddish glow during solar eclipses</li>
+                        <li><i class="fas fa-circle"></i> <strong>Corona:</strong> The outermost layer of the Sun's atmosphere, visible during total solar eclipses as a white halo</li>
+                    </ul>
+                    
+                    <p>The Sun is composed primarily of hydrogen (73%) and helium (25%), with the remaining 2% consisting of heavier elements including oxygen, carbon, neon, and iron. These proportions change slowly over time as the Sun converts hydrogen to helium in its core.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="activity">
+            <h2><i class="fas fa-bolt"></i> Solar Activity</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/stars/sun/sunspots.jpg" alt="Sunspots">
+                    <figcaption class="image-caption">Sunspots are temporary phenomena on the Sun's photosphere that appear as dark spots.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/stars/sun/solar_flare.jpg" alt="Solar Flare">
+                    <figcaption class="image-caption">A powerful solar flare erupting from the Sun's surface, releasing enormous amounts of energy.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/stars/sun/cme.jpg" alt="Coronal Mass Ejection">
+                    <figcaption class="image-caption">A coronal mass ejection (CME) expelling billions of tons of solar material into space.</figcaption>
+                </figure>
+            </div>
+            <div class="star-text">
+                <p>The Sun is not a static object—it exhibits various forms of activity driven by its magnetic field. These solar phenomena can affect Earth and the rest of the solar system.</p>
+                
+                <h3>Key Solar Phenomena:</h3>
+                <ul class="star-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Sunspots:</strong> Dark, cooler regions on the Sun's surface caused by intense magnetic field concentrations</li>
+                    <li><i class="fas fa-circle"></i> <strong>Solar Flares:</strong> Sudden, intense bursts of radiation from the release of magnetic energy associated with sunspots</li>
+                    <li><i class="fas fa-circle"></i> <strong>Coronal Mass Ejections (CMEs):</strong> Large releases of plasma and magnetic field from the corona</li>
+                    <li><i class="fas fa-circle"></i> <strong>Solar Wind:</strong> Stream of charged particles released from the Sun's upper atmosphere</li>
+                    <li><i class="fas fa-circle"></i> <strong>Prominences:</strong> Bright, arc-like structures extending outward from the Sun's surface</li>
+                </ul>
+                
+                <p>The Sun's activity follows an approximately 11-year cycle, known as the solar cycle. During solar maximum, there are many sunspots and increased solar activity. During solar minimum, there are few or no sunspots and less activity. This cyclical behavior affects space weather and can impact Earth's climate, satellites, and power grids.</p>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="earth-connection">
+            <h2><i class="fas fa-globe-americas"></i> The Sun and Earth</h2>
+            <div class="star-content-flex">
+                <div class="star-text">
+                    <p>The relationship between the Sun and Earth is foundational to our existence. Nearly all energy used by life on Earth originally comes from the Sun.</p>
+                    
+                    <h3>Impacts on Earth:</h3>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Climate and Weather:</strong> Solar radiation drives Earth's climate system and weather patterns</li>
+                        <li><i class="fas fa-circle"></i> <strong>Photosynthesis:</strong> Plants convert sunlight into chemical energy, supporting most food chains</li>
+                        <li><i class="fas fa-circle"></i> <strong>Day and Night Cycle:</strong> Earth's rotation creates the alternating pattern of daylight and darkness</li>
+                        <li><i class="fas fa-circle"></i> <strong>Seasons:</strong> Earth's axial tilt and orbit around the Sun cause seasonal changes</li>
+                        <li><i class="fas fa-circle"></i> <strong>Space Weather:</strong> Solar activity can disrupt satellite operations, communications, and power grids</li>
+                        <li><i class="fas fa-circle"></i> <strong>Aurora:</strong> Solar wind particles interact with Earth's magnetic field to create the aurora borealis and australis</li>
+                    </ul>
+                    
+                    <p>The Sun's energy output has remained remarkably stable over human history, varying by only about 0.1% over the past 2,000 years. This stability has been crucial for the development of life on Earth. However, over the Sun's entire lifetime, its brightness has increased by about 30% since its formation 4.6 billion years ago.</p>
+                </div>
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sun/aurora.jpg" alt="Aurora Borealis" class="star-diagram">
+                    <p class="image-caption">The Aurora Borealis (Northern Lights), a visible effect of the Sun's particles interacting with Earth's magnetosphere.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-section" id="observation">
+            <h2><i class="fas fa-telescope"></i> Observing the Sun</h2>
+            <div class="star-content-flex">
+                <div class="star-image-container">
+                    <img src="../../assets/stars/sun/solar_telescope.jpg" alt="Solar Telescope" class="star-side-image">
+                    <p class="image-caption">The Daniel K. Inouye Solar Telescope, the world's largest solar telescope, located in Hawaii.</p>
+                </div>
+                <div class="star-text">
+                    <p>Humans have observed the Sun since prehistoric times, but modern solar astronomy has revolutionized our understanding of our star.</p>
+                    
+                    <h3>Solar Observation Methods:</h3>
+                    <ul class="star-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Ground-based Telescopes:</strong> Specialized solar telescopes like the Daniel K. Inouye Solar Telescope provide detailed views of the Sun's surface</li>
+                        <li><i class="fas fa-circle"></i> <strong>Space-based Observatories:</strong> Satellites like NASA's Solar Dynamics Observatory (SDO) and the Solar and Heliospheric Observatory (SOHO) observe the Sun continuously</li>
+                        <li><i class="fas fa-circle"></i> <strong>Parker Solar Probe:</strong> NASA mission launched in 2018 to study the Sun's outer corona by flying closer to the Sun than any previous spacecraft</li>
+                        <li><i class="fas fa-circle"></i> <strong>Solar Orbiter:</strong> Joint ESA/NASA mission to observe the Sun's poles from high-latitude orbits</li>
+                    </ul>
+                    
+                    <div class="safety-warning">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Safety Warning</h3>
+                        <p>Never look directly at the Sun without proper eye protection! Even brief glimpses can cause permanent eye damage or blindness. Safe solar observation requires specialized solar filters or indirect viewing methods.</p>
+                    </div>
+                    
+                    <p>Modern solar observations use various wavelengths of light to study different layers of the Sun. For example, observations in extreme ultraviolet light reveal the Sun's outer atmosphere, while helioseismology uses sound waves to probe the Sun's interior structure.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="star-navigation">
+            <a href="../stars.html" class="nav-button back-to-stars"><i class="fas fa-th"></i> All Stars </a>
+            <a href="betelgeuse.html" class="nav-button next-star"> Betelgeuse <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

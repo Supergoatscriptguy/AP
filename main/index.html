@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Astronomy Project</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <style>
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+                max-width: 800px;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .page-title, .hero-subtitle {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="stars-bg"></canvas>
+        <div class="cosmic-glow"></div>
+        
+        <header class="site-header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-meteor"></i>
+                    <h1>Astronomy Project</h1>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="planets.html"><i class="fas fa-globe"></i> Planets</a></li>
+                        <li><a href="stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                        <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+        <main>
+            <section id="hero">
+                <div class="hero-content">
+                    <h2 class="page-title"><span class="highlight">Astronomy Project</span></h2>
+                    <p class="hero-subtitle">Journey through the wonders of Space!</p>
+                    <div class="hero-buttons">
+                        <a href="../main/planets.html" class="primary-button">Start Your Journey <i class="fas fa-rocket"></i></a>
+                        <a href="#sources" class="secondary-button"> Sources <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </section>
+            <div class="slider-nav">
+                <span class="slider-dot active"></span>
+                <span class="slider-dot"></span>
+                <span class="slider-dot"></span>
+            </div>
+            
+            <section id="explore-sections">
+                <div class="card-container">
+                    <div class="explore-card" id="planets-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <i class="fas fa-globe-americas"></i>
+                                <h2>Planets</h2>
+                                <p>Explore the planets in our Solar System!</p>
+                            </div>
+                            <div class="card-back">
+                                <p>Journey through the Solar System and learn about the planets.</p>
+                                <a href="planets.html" class="card-button">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="explore-card" id="stars-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <i class="fas fa-star"></i>
+                                <h2>Stars</h2>
+                                <p>Learn about Stars and the facts about them.</p>
+                            </div>
+                            <div class="card-back">
+                                <p>Information about different stars, including The Sun and other stars.</p>
+                                <a href="stars.html" class="card-button">Discover <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="planets">
+                    <div class="slider-nav">
+                        <span class="slider-dot"></span>
+                        <span class="slider-dot active"></span>
+                        <span class="slider-dot"></span>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sources">
+                <h2>Sources</h2>
+                <p>Images, information, and data was collected from these websites:</p>
+                <div class="sources-grid">
+                    <a href="https://www.nasa.gov/" target="_blank" class="source-item">
+                        <i class="fas fa-space-shuttle"></i>
+                        <span>NASA</span>
+                    </a>
+                    <a href="https://www.esa.int/" target="_blank" class="source-item">
+                        <i class="fas fa-satellite"></i>
+                        <span>ESA</span>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Portal:Astronomy" target="_blank" class="source-item">
+                        <i class="fas fa-book"></i>
+                        <span>Wikipedia</span>
+                    </a>
+                    <a href="https://www.si.edu/spotlight/astronomy" target="_blank" class="source-item">
+                        <i class="fas fa-landmark"></i>
+                        <span>Smithsonian</span>
+                    </a>
+                    <a href="https://hubblesite.org/" target="_blank" class="source-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Hubble</span>
+                    </a>
+                    <a href="https://www.space.com/" target="_blank" class="source-item">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Space.com</span>
+                    </a>
+                </div>
+                <p class="image-credits">Images courtesy of NASA, ESA, and other public domain sources.</p>
+            </section>
+        </main>
+        
+        <footer id="about">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-meteor"></i>
+                        <span>Astronomy Project</span>
+                    </div>
+                </div>
+                <p class="copyright">Created by: Jonah & Micah</p>
+            </div>
+        </footer>
+        
+        <div class="floating-particles"></div>
+        
+        <script src="script.js"></script>
+        <script src="particles.js"></script>
+        <script>
+            const facts = document.querySelectorAll('.fact');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentFact = 0;
+            
+            function showFact(index) {
+                facts.forEach(fact => fact.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                facts[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentFact = index;
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showFact(index));
+            });
+            
+            setInterval(() => {
+                currentFact = (currentFact + 1) % facts.length;
+                showFact(currentFact);
+            }, 8000);
+            
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        </script>
+    </body>
+</html>

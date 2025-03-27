@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars | Astronomy Project</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="mars-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="planet-detail-main">
+
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Mars</h1>
+                <p class="hero-subtitle">The Red Planet</p>
+            </div>
+        </section>
+
+        <section class="planet-hero" id="mars-hero">
+            <div class="planet-hero-content">
+                <h1>Mars</h1>
+                <p class="planet-subtitle">The Red Planet</p>
+            </div>
+        </section>
+        
+
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Mars is the fourth planet from the Sun and the second-smallest planet in our solar system. Known as the "Red Planet" due to the iron oxide (rust) on its surface.</p>
+                    <p>Mars has some remarkable similarities to Earth, including polar ice caps, seasons, and evidence of ancient river valleys and lake beds. These features, along with its relatively hospitable conditions compared to other planets, make Mars the main target for human exploration beyond the Moon.</p>
+                    <ul class="planet-quick-facts">
+                        <li><strong>Distance from Sun:</strong> 142 million miles (1.5 astronomical units)</li>
+                        <li><strong>Diameter:</strong> 4,220 miles (about half the size of Earth)</li>
+                        <li><strong>Length of Day:</strong> 24.6 hours</li>
+                        <li><strong>Length of Year:</strong> 687 Earth days</li>
+                        <li><strong>Surface Temperature:</strong> -80°F average (-220°F to 70°F range)</li>
+                    </ul>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mars/mars.jpg" alt="Mars Full Disk" class="planet-main-image">
+                    <p class="image-caption">Mars as captured by NASA's Mars Global Surveyor spacecraft, showing its red surface and polar ice cap.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="planet-section" id="atmosphere">
+            <h2><i class="fas fa-wind"></i> Mars's Atmosphere</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mars/mars_atmosphere.jpg" alt="Mars Atmosphere" class="planet-diagram">
+                    <p class="image-caption">The thin Martian atmosphere, showing dust storms and clouds.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Mars has a thin atmosphere that's primarily made of carbon dioxide. The atmospheric pressure on Mars is less than 1% of Earth's at sea level, making it much too thin for humans to survive without pressurized suits.</p>
+                    <h3>Key Characteristics:</h3>
+                    <ul>
+                        <li><strong>Composition:</strong> 95% carbon dioxide, 2.7% nitrogen, 1.6% argon, with traces of oxygen and water vapor</li>
+                        <li><strong>Pressure:</strong> About 0.6% of Earth's atmospheric pressure at sea level</li>
+                        <li><strong>Weather:</strong> Seasonal dust storms that sometimes engulf the entire planet</li>
+                        <li><strong>Clouds:</strong> Thin water/ice clouds and carbon dioxide clouds at high altitudes</li>
+                        <li><strong>Greenhouse Effect:</strong> Minimal, contributing to Mars's cold temperatures</li>
+                    </ul>
+                    <p>Mars once had a much thicker atmosphere that supported flowing water on its surface. Scientists believe most of this atmosphere was lost to space over billions of years due to Mars's weak gravity and lack of a global magnetic field to protect it from solar wind.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="planet-section" id="structure">
+            <h2><i class="fas fa-layer-group"></i> Internal Structure</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Mars has a differentiated internal structure with a core, mantle, and crust, similar to Earth but with important differences in size and composition.</p>
+                    
+                    <h3>Mars's Layers:</h3>
+                    <ul>
+                        <li><strong>Core:</strong> A partially liquid iron-sulfur core with a radius of approximately 1,100-1,300 miles</li>
+                        <li><strong>Mantle:</strong> A rocky mantle consisting primarily of silicate materials</li>
+                        <li><strong>Crust:</strong> A thicker crust than Earth's, averaging about 30-50 miles thick</li>
+                    </ul>
+                    
+                    <p>Unlike Earth, Mars lacks an active global magnetic field, although there are regions of localized magnetism in the crust. This suggests that Mars's internal dynamo, which would have generated a magnetic field, shut down billions of years ago, likely due to cooling of the planet's core.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mars/marsinternalstructure.jpg" alt="Mars Interior Diagram" class="planet-diagram">
+                    <p class="image-caption">Diagram showing the internal structure of Mars with its core, mantle, and crust.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="planet-section" id="rovers">
+            <h2><i class="fas fa-robot"></i> Mars Rover Missions</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/mars/marsrover.jpg" alt="Perseverance Rover" class="planet-side-image">
+                    <p class="image-caption">NASA's Perseverance rover, which landed on Mars in February 2021.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Mars has been explored by more spacecraft than any other planet beyond Earth. Rovers have been particularly successful in studying the Martian surface up close.</p>
+                    
+                    <h3>Major Rover Missions:</h3>
+                    <ul>
+                        <li><strong>Sojourner (1997):</strong> First rover on Mars, part of the Pathfinder mission</li>
+                        <li><strong>Spirit & Opportunity (2004):</strong> Twin rovers that found evidence of ancient water</li>
+                        <li><strong>Curiosity (2012):</strong> Found evidence that Mars could have supported microbial life</li>
+                        <li><strong>Perseverance (2021):</strong> Searching for signs of ancient life and collecting samples for future return to Earth</li>
+                        <li><strong>Zhurong (2021):</strong> China's first Mars rover, studying geology and atmosphere</li>
+                    </ul>
+                    
+                    <p>These rovers have revolutionized our understanding of Mars, providing evidence that the planet once had flowing water, lakes, and potentially habitable conditions. Perseverance is currently collecting samples that a future mission will retrieve and return to Earth for detailed study.</p>
+                </div>
+            </div>
+        </section>
+        
+ 
+        <section class="planet-section" id="moons">
+            <h2><i class="fas fa-moon"></i> Moons of Mars</h2>
+            <p class="section-intro">Mars has two small, irregularly shaped moons named Phobos and Deimos.</p>
+            <div class="phases-container">
+                <figure class="phase">
+                    <img src="../../assets/planets/mars/phobos.jpg" alt="Phobos">
+                    <figcaption>Phobos, the larger of Mars's two moons</figcaption>
+                </figure>
+                <figure class="phase">
+                    <img src="../../assets/planets/mars/deimos.jpg" alt="Deimos">
+                    <figcaption>Deimos, Mars's smaller outer moon</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <p>Both moons are thought to be captured asteroids and have unusual characteristics:</p>
+                
+                <h3>Phobos:</h3>
+                <ul>
+                    <li><strong>Size:</strong> About 14 miles across at its widest point</li>
+                    <li><strong>Orbit:</strong> Just 3,700 miles above Mars's surface</li>
+                    <li><strong>Orbital Period:</strong> 7 hours 39 minutes (orbits Mars three times per day)</li>
+                    <li><strong>Future:</strong> Gradually spiraling inward and expected to either crash into Mars or break apart into a ring in about 50 million years</li>
+                </ul>
+                
+                <h3>Deimos:</h3>
+                <ul>
+                    <li><strong>Size:</strong> About 8 miles across</li>
+                    <li><strong>Orbit:</strong> 14,580 miles above Mars's surface</li>
+                    <li><strong>Orbital Period:</strong> 30 hours 18 minutes</li>
+                </ul>
+                
+                <p>These tiny moons were discovered in 1877 by American astronomer Asaph Hall and named after the mythological Greek characters Phobos (fear) and Deimos (panic), who accompanied their father Ares (Mars) into battle.</p>
+            </div>
+        </section>
+        
+
+        <section class="planet-section" id="surface">
+            <h2><i class="fas fa-mountain"></i> Surface of Mars</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/mars/olympus_mons.jpg" alt="Olympus Mons">
+                    <figcaption>Olympus Mons, the largest volcano in the solar system</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/mars/valles_marineris.jpg" alt="Valles Marineris">
+                    <figcaption>Valles Marineris, a vast canyon system stretching nearly a quarter of Mars's circumference</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/mars/landscape.jpg" alt="Martian Surface">
+                    <figcaption>The rocky Martian landscape as seen by the Curiosity rover</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <p>Mars features some of the most extreme geography in the solar system, including the largest volcano and deepest canyon. The planet's surface shows clear evidence of a more active past, with dry river beds, lake basins, and polar ice caps.</p>
+                
+                <h3>Notable Surface Features:</h3>
+                <ul>
+                    <li><strong>Olympus Mons:</strong> The largest volcano in the solar system, standing 13.6 miles high (nearly three times the height of Mount Everest) and spreading 374 miles across</li>
+                    <li><strong>Valles Marineris:</strong> A system of canyons stretching 2,500 miles, up to 120 miles wide and 4 miles deep</li>
+                    <li><strong>Polar Ice Caps:</strong> Composed of water ice and frozen carbon dioxide (dry ice), which expand and contract with the seasons</li>
+                    <li><strong>Impact Craters:</strong> Numerous craters of various sizes, especially in the southern hemisphere</li>
+                    <li><strong>Ancient River Valleys:</strong> Networks of channels that suggest flowing water existed billions of years ago</li>
+                </ul>
+                
+                <p>The Martian surface is primarily composed of basaltic rock covered with fine-grained iron oxide dust, giving the planet its characteristic reddish appearance. This dust often gets swept up in massive dust storms that can occasionally engulf the entire planet.</p>
+            </div>
+        </section>
+        
+
+        <section class="planet-navigation">
+            <a href="earth.html" class="nav-button prev-planet">Previous: Earth</a>
+            <a href="../planets.html" class="nav-button back-to-planets">Back to Planets</a>
+            <a href="asteroid_Belt.html" class="nav-button next-planet">Next: Asteroid Belt</a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+    
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

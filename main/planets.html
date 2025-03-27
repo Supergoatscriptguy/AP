@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .planets-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 2rem auto 4rem;
+            padding: 0 2rem;
+        }
+        
+        .planets-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .planets-intro h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .planets-intro p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        .planets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto 5rem;
+        }
+        
+        .planet-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(106, 17, 203, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .planet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glow);
+            border-color: rgba(106, 17, 203, 0.5);
+        }
+        
+        .planet-card:nth-child(1) { animation-delay: 0.1s; }
+        .planet-card:nth-child(2) { animation-delay: 0.2s; }
+        .planet-card:nth-child(3) { animation-delay: 0.3s; }
+        .planet-card:nth-child(4) { animation-delay: 0.4s; }
+        .planet-card:nth-child(5) { animation-delay: 0.5s; }
+        .planet-card:nth-child(6) { animation-delay: 0.6s; }
+        .planet-card:nth-child(7) { animation-delay: 0.7s; }
+        .planet-card:nth-child(8) { animation-delay: 0.8s; }
+        .planet-card:nth-child(9) { animation-delay: 0.9s; }
+        
+        .planet-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .planet-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .planet-card:hover .planet-image img {
+            transform: scale(1.1);
+        }
+        
+        .planet-info {
+            padding: 1.5rem;
+        }
+        
+        .planet-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-light);
+        }
+        
+        .planet-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .planet-details-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(106, 17, 203, 0.3);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .planet-details-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(106, 17, 203, 0.5);
+        }
+        
+        .planet-details-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .planet-details-button:hover::after {
+            opacity: 1;
+            animation: pulseGlow 1.5s infinite;
+        }
+        
+
+        footer {
+            background: rgba(10, 10, 26, 0.9);
+            padding: 2rem 5%;
+            border-top: 1px solid rgba(106, 17, 203, 0.2);
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+        
+        .footer-logo i {
+            color: var(--primary);
+        }
+        
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.7; transform: scale(0.95); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+            100% { opacity: 0.7; transform: scale(0.95); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="planets-intro" class="planets-intro">
+            <h2><span class="highlight">Our Solar System</span></h2>
+            <p>The Solar System consists of the Sun and everything that orbits around it which includes planets, dwarf planets, moons, asteroids, comets, and more.</p>
+        </section>
+
+        <div class="planets-grid">
+            <article class="planet-card" id="mercury">
+                <div class="planet-image">
+                    <img src="../assets/planets/mercury/Mercury_wholeview.jpg" alt="Mercury">
+                </div>
+                <div class="planet-info">
+                    <h3>Mercury</h3>
+                    <p>Mercury is the smallest and closest planet to the Sun. It has almost no atmosphere and its surface is covered with craters, similar to our Moon!</p>
+                    <a href="planets/mercury.html" class="planet-details-button">View More Info<i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="venus">
+                <div class="planet-image">
+                    <img src="../assets/planets/venus/Venus_whole_Image.jpg" alt="Venus">
+                </div>
+                <div class="planet-info">
+                    <h3>Venus</h3>
+                    <p>Venus is the hottest planet in our solar system due to its thick atmosphere that traps heat.</p>
+                    <a href="planets/venus.html" class="planet-details-button">View More Info<i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="earth">
+                <div class="planet-image">
+                    <img src="../assets/planets/earth/WholeView_from_Apollo_17.jpg" alt="Earth">
+                </div>
+                <div class="planet-info">
+                    <h3>Earth</h3>
+                    <p>Earth is our home. It is the only planet known to have life on. It has liquid water on its surface and an oxygen atmosphere that lets us live.</p>
+                    <a href="planets/earth.html" class="planet-details-button">View More Info<i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="mars">
+                <div class="planet-image">
+                    <img src="../assets/planets/mars/fullview.jpg" alt="Mars">
+                </div>
+                <div class="planet-info">
+                    <h3>Mars</h3>
+                    <p>Mars is known as the Red Planet. It has the largest volcano and the deepest canyon in the solar system.</p>
+                    <a href="planets/mars.html" class="planet-details-button">View More Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="asteroid-belt">
+                <div class="planet-image">
+                    <img src="../assets/planets/asteroid_belt/asteroidbelt.png" alt="Asteroid Belt">
+                </div>
+                <div class="planet-info">
+                    <h3>Asteroid Belt</h3>
+                    <p>The Asteroid Belt is an area between Mars and Jupiter containing millions of rocky objects going from dust particles to dwarf planets like Ceres.</p>
+                    <a href="planets/asteroid-belt.html" class="planet-details-button">View More Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="jupiter">
+                <div class="planet-image">
+                    <img src="../assets/planets/jupiter/fullview.jpg" alt="Jupiter">
+                </div>
+                <div class="planet-info">
+                    <h3>Jupiter</h3>
+                    <p>Jupiter is the largest planet in our solar system. Jupiter is known as the failed Star. Jupiter has a massive storm that has been happening for hundreds of years.</p>
+                    <a href="planets/jupiter.html" class="planet-details-button">View More Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="saturn">
+                <div class="planet-image">
+                    <img src="../assets/planets/saturn/Saturn_during_Equinox.jpg" alt="Saturn">
+                </div>
+                <div class="planet-info">
+                    <h3>Saturn</h3>
+                    <p>Saturn is famous for its rings. Saturn is also known for its many moons.</p>
+                    <a href="planets/saturn.html" class="planet-details-button">View More Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="uranus">
+                <div class="planet-image">
+                    <img src="../assets/planets/uranus/FullView.jpg" alt="Uranus">
+                </div>
+                <div class="planet-info">
+                    <h3>Uranus</h3>
+                    <p>Uranus is unique because it rotates on its side. It appears blue-green because of the methane in its atmosphere.</p>
+                    <a href="planets/uranus.html" class="planet-details-button">View More Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="planet-card" id="neptune">
+                <div class="planet-image">
+                    <img src="../assets/planets/neptune/wholeView.jpg" alt="Neptune">
+                </div>
+                <div class="planet-info">
+                    <h3>Neptune</h3>
+                    <p>Neptune has the strongest winds in the solar system, which can reach speedss of over 1200 miles per hour. Its blue color comes also comes from methane in its atmosphere.</p>
+                    <a href="planets/neptune.html" class="planet-details-button">View More Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-meteor"></i>
+                <span>Astronomy Project</span>
+            </div>
+            <p>Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="neptune-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Neptune</h1>
+                <p class="hero-subtitle">The Windiest Planet</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> About Neptune</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Neptune is the eighth and farthest planet from the Sun in our solar system. It's the fourth-largest planet by diameter and the third-most massive. Named after the Roman god of the sea, Neptune is a stunning blue ice giant planet.</p>
+                    
+                    <p>Neptune was the first planet located by mathematical calculations rather than through regular observations of the sky. Unexpected changes in the orbit of Uranus led astronomers to deduce that its orbit was subject to gravitational perturbation by an unknown planet.</p>
+                    
+                    <ul class="planet-quick-facts">
+                        <li><strong>Diameter:</strong> 49,244 km (30,598 miles)</li>
+                        <li><strong>Distance from Sun:</strong> 4.5 billion km (2.8 billion miles)</li>
+                        <li><strong>Day Length:</strong> 16 Earth hours</li>
+                        <li><strong>Year Length:</strong> 165 Earth years</li>
+                        <li><strong>Moons:</strong> 14 known moons</li>
+                        <li><strong>Temperature:</strong> -214°C (-353°F) at cloud tops</li>
+                    </ul>
+                    
+                    <p>Neptune is one of the two ice giants in our outer solar system (the other is Uranus). Despite having a solid core, Neptune is primarily composed of fluids—specifically water, ammonia, and methane—above a small rocky center.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/neptune/neptune.jpg" alt="Neptune" class="planet-main-image">
+                    <p class="image-caption">Neptune as imaged by Voyager 2 during its 1989 flyby, showing its deep blue coloration and visible storm systems.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="atmosphere">
+            <h2><i class="fas fa-wind"></i> Atmosphere and Weather</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/neptune/neptune_storms.jpg" alt="Neptune's Storms" class="planet-side-image">
+                    <p class="image-caption">The Great Dark Spot and other storm systems in Neptune's atmosphere captured by Voyager 2.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Neptune's atmosphere is primarily composed of hydrogen and helium, with traces of methane that absorb red light and reflect blue, giving the planet its distinctive blue color. Beneath this lies a layer of clouds made of methane, hydrogen sulfide, and ammonia.</p>
+                    
+                    <h3>Extreme Weather:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Wind Speeds:</strong> Neptune has the fastest winds in the solar system, reaching up to 2,100 km/h (1,300 mph)</li>
+                        <li><i class="fas fa-circle"></i> <strong>Great Dark Spot:</strong> Similar to Jupiter's Great Red Spot, Neptune had a large storm system called the Great Dark Spot when Voyager 2 visited in 1989</li>
+                        <li><i class="fas fa-circle"></i> <strong>Dynamic Storms:</strong> Unlike Jupiter's long-lasting storms, Neptune's storm systems appear and disappear over periods of years</li>
+                        <li><i class="fas fa-circle"></i> <strong>Scooter:</strong> A fast-moving white cloud nicknamed the "Scooter" that races around the planet</li>
+                        <li><i class="fas fa-circle"></i> <strong>Temperature:</strong> Despite being far from the Sun, Neptune radiates more heat than it receives, suggesting internal heat sources</li>
+                    </ul>
+                    
+                    <p>The extreme weather on Neptune is particularly puzzling to scientists because the planet receives only minimal energy from the Sun to power its weather systems. The source of energy for these violent storms is still not fully understood.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="interior">
+            <h2><i class="fas fa-layer-group"></i> Interior Structure</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Neptune's interior structure differs from the gas giants Jupiter and Saturn. As an ice giant, it has a larger solid core and different composition.</p>
+                    
+                    <h3>Neptune's Layers:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Core:</strong> A solid core composed primarily of rock and metal, similar in mass to Earth</li>
+                        <li><i class="fas fa-circle"></i> <strong>Mantle:</strong> A thick, hot dense fluid of water, methane, and ammonia under extreme pressure called an "ocean" of "hot ice"</li>
+                        <li><i class="fas fa-circle"></i> <strong>Atmosphere:</strong> An outer layer of hydrogen, helium, and methane gas</li>
+                    </ul>
+                    
+                    <p>Neptune's magnetic field is tilted 47 degrees from its rotational axis and is offset from the planet's center. This unusual configuration suggests the field is generated in the mantle rather than the core, unlike Earth's magnetic field.</p>
+                    
+                    <p>Neptune emits 2.6 times more energy than it receives from the Sun. This excess heat production likely comes from internal processes and may be leftover heat from the planet's formation combined with gravitational contraction.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/neptune/neptune_interior.jpg" alt="Neptune Interior Structure" class="planet-diagram">
+                    <p class="image-caption">Diagram showing the interior structure of Neptune with its rocky core, fluid mantle, and gaseous atmosphere.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="moons">
+            <h2><i class="fas fa-moon"></i> Neptune's Moons</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/neptune/triton.jpg" alt="Triton">
+                    <figcaption class="image-caption">Triton, Neptune's largest moon, has a retrograde orbit suggesting it was captured from the Kuiper Belt.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/neptune/nereid.jpg" alt="Nereid">
+                    <figcaption class="image-caption">Nereid has one of the most eccentric orbits of any moon in our solar system.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/neptune/naiad.jpg" alt="Neptune's Inner Moons">
+                    <figcaption class="image-caption">Naiad and the other inner moons of Neptune were discovered by Voyager 2 in 1989.</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <p>Neptune has 14 known moons, the largest being Triton which is believed to be a captured Kuiper Belt object.</p>
+                
+                <h3>Notable Moons:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Triton:</strong> The seventh-largest moon in the solar system, Triton orbits in the opposite direction to Neptune's rotation (retrograde). It has active nitrogen geysers and a very thin nitrogen atmosphere.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Nereid:</strong> The third-largest of Neptune's moons with an unusually eccentric orbit, suggesting it may have been significantly perturbed during Triton's capture.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Proteus:</strong> The second-largest Neptunian moon and one of the darkest objects in the solar system, reflecting only 6% of the light that hits it.</li>
+                    <li><i class="fas fa-circle"></i> <strong>Inner Moons:</strong> Neptune has 7 small inner moons (Naiad, Thalassa, Despina, Galatea, Larissa, Hippocamp, and S/2004 N 1) that orbit within the planet's ring system.</li>
+                </ul>
+                
+                <p>Triton is unique among large moons because of its retrograde orbit and is the only large moon in the solar system to do so. This, along with its composition similar to Pluto, strongly suggests it was captured from the Kuiper Belt. Triton is also geologically active, with nitrogen geysers erupting from its south polar region.</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="rings">
+            <h2><i class="fas fa-ring"></i> Neptune's Rings</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/neptune/neptune_rings.jpg" alt="Neptune's Rings" class="planet-side-image">
+                    <p class="image-caption">Neptune's ring system as imaged by Voyager 2, showing the faint but distinct rings.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Neptune has five main rings, which are much fainter and less substantial than Saturn's famous rings. They were first conclusively detected by Voyager 2 in 1989, though earlier observations had suggested their existence.</p>
+                    
+                    <h3>Ring Structure:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Adams Ring:</strong> The outermost and most prominent ring, containing several bright arcs called Liberté, Égalité, and Fraternité</li>
+                        <li><i class="fas fa-circle"></i> <strong>Leverrier Ring:</strong> The second-most prominent ring</li>
+                        <li><i class="fas fa-circle"></i> <strong>Arago Ring:</strong> A narrow ring between Leverrier and Lassell</li>
+                        <li><i class="fas fa-circle"></i> <strong>Lassell Ring:</strong> A wide, faint ring</li>
+                        <li><i class="fas fa-circle"></i> <strong>Galle Ring:</strong> The innermost ring</li>
+                    </ul>
+                    
+                    <p>Neptune's rings are unusual because they contain "ring arcs"—brighter, clumpy segments rather than complete rings. Scientists believe these arcs are kept in place by the gravitational effects of Galatea, one of Neptune's small inner moons.</p>
+                    
+                    <p>The rings are composed primarily of dust particles with a reddish hue, suggesting they contain organic compounds. Unlike Saturn's icy rings, Neptune's rings contain a higher proportion of dust.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="exploration">
+            <h2><i class="fas fa-rocket"></i> Exploration of Neptune</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Neptune is one of the least explored planets in our solar system. Only one spacecraft has ever visited this distant ice giant.</p>
+                    
+                    <h3>Voyager 2 Mission:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Date:</strong> August 25, 1989</li>
+                        <li><i class="fas fa-circle"></i> <strong>Closest Approach:</strong> 4,800 km (3,000 miles) from Neptune's north pole</li>
+                        <li><i class="fas fa-circle"></i> <strong>Duration:</strong> 5-day flyby study</li>
+                        <li><i class="fas fa-circle"></i> <strong>Key Discoveries:</strong> Confirmed the existence of rings, discovered 6 new moons, observed the Great Dark Spot, and studied Triton</li>
+                    </ul>
+                    
+                    <h3>Future Missions:</h3>
+                    <p>NASA and other space agencies have proposed several missions to return to Neptune:</p>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Neptune Odyssey:</strong> A NASA concept for a Neptune orbiter and Triton lander, which could launch in the 2030s</li>
+                        <li><i class="fas fa-circle"></i> <strong>Trident:</strong> A proposed NASA flyby mission to study Neptune's largest moon Triton</li>
+                    </ul>
+                    
+                    <p>Scientists are particularly interested in returning to Neptune to better understand ice giant planets, which are now known to be common throughout our galaxy. A dedicated Neptune orbiter would revolutionize our understanding of this mysterious world.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/neptune/voyager2.jpg" alt="Voyager 2 Spacecraft" class="planet-side-image">
+                    <p class="image-caption">The Voyager 2 spacecraft, which remains the only human-made object to have visited Neptune.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="planet-navigation">
+            <a href="uranus.html" class="nav-button prev-planet"><i class="fas fa-arrow-left"></i> Uranus</a>
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

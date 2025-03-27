@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="venus-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Venus</h1>
+                <p class="hero-subtitle">The Hottest Planet in Our Solar System</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> Basics</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Venus is the second planet from the Sun, and it is also the closest planet to Earth. It's one of the four terrestrial planets.</p>
+                    <p>It has a toxic atmosphere filled with carbon dioxide and clouds made of sulfuric acid. The atmosphere traps heat in a runaway greenhouse effect, which is why Venus is the hottest planet in our solar system.</p>
+                    <ul class="planet-quick-facts">
+                        <li><strong>Distance from Sun:</strong> 67 million miles (0.72 astronomical units)</li>
+                        <li><strong>Diameter:</strong> 7,521 miles</li>
+                        <li><strong>Length of Day:</strong> 243 Earth days</li>
+                        <li><strong>Length of Year:</strong> 225 Earth days</li>
+                        <li><strong>Surface Temperature:</strong> around 867°F</li>
+                    </ul>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/venus/magellan_pic_of_venus.jpg" alt="Venus Full Disk" class="planet-main-image">
+                    <p class="image-caption">Venus as captured by NASA's Magellan mission.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="atmosphere">
+            <h2><i class="fas fa-wind"></i>Atmosphere</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/venus/atmospheres-middle-Profile-measurements-Venus-probes-mission.jpg" alt="Venus 1e" class="planet-diagram">
+                    <p class="image-caption">Picture of Venus' middle and lower atmospheres.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Venus has a thick, toxic atmosphere filled with carbon dioxide and clouds of sulfric acid.</p>
+                    <h3>Key Characteristics:</h3>
+                    <ul class="planet-facts-list">
+                        <li> <strong>Chemical Composition:</strong> 96% carbon dioxide, 3.5% nitrogen, with small amounts of sulfur dioxide andd other gaseses</li>
+                        <li> <strong>Greenhouse Effect:</strong> Venus experiences a runaway greenhouse effect that traps heat, making it a very hot planet.</li>
+                        <li> <strong>Cloud Layers:</strong> There are three main cloud layers at 28-43 miles altitude</li>
+                        <li> <strong>Acid Rain:</strong> There is Acid Rain on Venus. This acid rain evaporates before reaching the surface due to the extreme heat</li>
+                    </ul>
+                    <p></i>    The thick atmosphere creates a strong greenhouse effect, trapping heat and making Venus the hottest planet in our solar system despite being farther from the Sun than Mercury.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="structure">
+            <h2><i class="fas fa-layer-group"></i> Internal Structure</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Venus's internal structure is believed to be similar to Earth's, with a core, mantle, and crust.</p>
+                    
+                    <h3>Venus's Layers:</h3>
+                    <ul class="planet-facts-list">
+                        <li></i> <strong>Core:</strong> Likely a partially liquid iron core approximately 1,850 miles in radius</li>
+                        <li></i> <strong>Mantle:</strong> A rocky mantle composed primarily of silicate materials</li>
+                        <li></i> <strong>Crust:</strong> A rigid crust estimated to be 30 miles thick on average</li>
+                    </ul>
+                    
+                    <p>Venus lacks a magnetic field, suggesting its core may not be generating the same kind of dynamo effect as Earth's. This absence of a magnetic field means solar radiation interacts directly with the upper atmosphere.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/venus/diagram.jpg" alt="Venus Interior Diagram" class="planet-diagram">
+                    <p class="image-caption">Diagram showing the internal structure of Venus.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="magellan">
+            <h2><i class="fas fa-rocket"></i> The Magellan Mission</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/venus/Magellan_at_Kennedy_Space_Center.jpg" alt="Magellan Spacecraft" class="planet-side-image">
+                    <p class="image-caption">The Magellan spacecraft in the Kennedy Space Center.</p>
+                </div>
+                <div class="planet-text">
+                    <p>NASA's Magellan mission was a probe sent to get data of Venus. Launched in 1989, it arrived to Venus in 1990 and spent four years mapping the surface.</p>
+                    
+                    <h3>Mission Highlights:</h3>
+                    <ul class="planet-facts-list">
+                        <li><strong>Launch Date:</strong> May 4, 1989</li>
+                        <li> <strong>Venus Arrival:</strong> August 10, 1990</li>
+                        <li> <strong>End of Mission:</strong> October 13, 1994</li>
+                        <li> <strong>Coverage:</strong> 98% of Venus's surface</li>
+                        <li> <strong>Resolution:</strong> Down to 300 feet</li>
+                    </ul>
+                    
+                    <p>The Magellan mission helped us understand Venus more by letting us discover valcanoes, vast lava plains, and unique tectonic features. The data gave us the most detailed global map of Venus.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        <section class="planet-section" id="surface">
+            <h2><i class="fas fa-mountain"></i> Surface of Venus</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/venus/maxwell_montes.jpg" alt="Maxwell Montes">
+                    <figcaption class="image-caption">Maxwell Montes, the highest mountain on Venus</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/venus/maat_mons.jpg" alt="Maat Mons">
+                    <figcaption class="image-caption">Maat Mons, a massive shield volcano</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/venus/plains.jpg" alt="Venusian Plains">
+                    <figcaption class="image-caption">Vast lava plains covering much of Venus</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <p>Venus has a dangerous surface. The surface has many dangerous features, including vast plains formed by lava flows, many large volcanoes, and unique features not found anywhere else in the solar system.</p>
+            
+                
+            </div>
+        </section>
+        
+        
+        <section class="planet-navigation">
+            <a href="mercury.html" class="nav-button prev-planet"><i class="fas fa-arrow-left"></i> Mercury</a>
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+            <a href="earth.html" class="nav-button next-planet">Earth <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>

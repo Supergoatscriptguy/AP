@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uranus | Astronomy Project</title>
+    
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="planets.css">
+    <link rel="stylesheet" href="uranus-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="stars-bg"></canvas>
+    <div class="cosmic-glow"></div>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-meteor"></i>
+                <h1>Astronomy Project</h1>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../planets.html" class="active"><i class="fas fa-globe"></i> Planets</a></li>
+                    <li><a href="../stars.html"><i class="fas fa-star"></i> Stars</a></li>
+                    <li><a href="../quiz/game.html" class="quiz-button"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Uranus</h1>
+                <p class="hero-subtitle">The Sideways Planet</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section">
+            <h2><i class="fas fa-info-circle"></i> About Uranus</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Uranus is the seventh planet from the Sun and the third-largest planet in our solar system. It's classified as an "ice giant" because while it has a gaseous atmosphere like Jupiter and Saturn, its interior contains more icy materials like water, ammonia, and methane.</p>
+                    
+                    <p>What makes Uranus truly unique is its extreme tilt, which makes it look sideways!</p>
+                    
+                    <ul class="planet-quick-facts">
+                        <li><strong>Diameter:</strong> around 32000 miles (4 times wider than Earth)</li>
+                        <li><strong>Distance from Sun:</strong> around 1.8 billion miles (19.8 AU)</li>
+                        <li><strong>Day Length:</strong> 17.2 Earth hours</li>
+                        <li><strong>Year Length:</strong> 84 Earth years</li>
+                        <li><strong>Moons:</strong> 27 known moons, all named after literary characters</li>
+                        <li><strong>Temperature:</strong> -320°F at cloud tops</li>
+                    </ul>
+                    
+                    <p>Uranus appears as a pale blue-green color due to methane in its atmosphere, which absorbs red light and reflects blue light. Unlike the other gas giants, Uranus has a relatively featureless appearance with few visible cloud bands or storms.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/uranus/uranus_voyager2.jpg" alt="Uranus" class="planet-main-image">
+                    <p class="image-caption">Uranus as imaged by Voyager 2 in 1986, showing its characteristic blue-green color and featureless appearance.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="sideways">
+            <h2><i class="fas fa-sync-alt"></i> The Sideways Planet</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/uranus/uranus_tilt_diagram.jpg" alt="Uranus Tilt" class="planet-diagram">
+                    <p class="image-caption">Diagram showing Uranus's extreme axial tilt of 98 degrees compared to other planets in the solar system.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Uranus's most distinctive feature is its extreme axial tilt of about 98 degrees. While Earth and most other planets spin roughly perpendicular to their orbital plane (like a spinning top), Uranus essentially rolls around the Sun on its side.</p>
+                    
+                    <h3>Consequences of the Extreme Tilt:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Extreme Seasons:</strong> Each pole gets 42 years of continuous sunlight followed by 42 years of darkness</li>
+                        <li><i class="fas fa-circle"></i> <strong>Unusual Weather:</strong> The strange orientation creates unique atmospheric circulation patterns</li>
+                        <li><i class="fas fa-circle"></i> <strong>Ring and Moon Orientation:</strong> The rings and moons orbit around the planet's equator, making them appear nearly vertical from Earth</li>
+                    </ul>
+                    
+                    <p>This unusual orientation likely resulted from a cataclysmic collision with an Earth-sized object early in the solar system's history. The impact was so powerful it knocked the young planet over on its side, permanently altering its rotation.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="atmosphere">
+            <h2><i class="fas fa-wind"></i> Atmosphere and Weather</h2>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/uranus/uranus_clouds.jpg" alt="Uranus Clouds">
+                    <figcaption class="image-caption">Modern infrared image revealing cloud structures in Uranus's atmosphere that are invisible in visible light.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/uranus/uranus_storm.jpg" alt="Uranus Storm">
+                    <figcaption class="image-caption">A large storm system on Uranus, captured by the Hubble Space Telescope.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/uranus/uranus_layers.jpg" alt="Uranus Atmosphere Layers">
+                    <figcaption class="image-caption">Diagram showing the different layers of Uranus's atmosphere.</figcaption>
+                </figure>
+            </div>
+            <div class="planet-text">
+                <p>While Uranus appears featureless in visible light, advanced imaging techniques have revealed a dynamic atmosphere with winds, storms, and seasonal changes.</p>
+                
+                <h3>Atmosphere Composition:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Primary Components:</strong> Hydrogen (83%) and helium (15%)</li>
+                    <li><i class="fas fa-circle"></i> <strong>Trace Elements:</strong> Methane (2%), which gives Uranus its blue-green color</li>
+                    <li><i class="fas fa-circle"></i> <strong>Structure:</strong> Layers of clouds at different altitudes, with methane ice at the uppermost levels</li>
+                </ul>
+                
+                <h3>Weather and Seasons:</h3>
+                <ul class="planet-facts-list">
+                    <li><i class="fas fa-circle"></i> <strong>Wind Speeds:</strong> Up to 900 km/h (560 mph) in the same direction as the planet's rotation</li>
+                    <li><i class="fas fa-circle"></i> <strong>Temperature:</strong> Oddly uniform despite the extreme tilt, with only about 10°C difference between equator and poles</li>
+                    <li><i class="fas fa-circle"></i> <strong>Storms:</strong> Occasionally develops large storm systems visible with modern telescopes</li>
+                </ul>
+                
+                <p>Interestingly, despite receiving 400 times less sunlight than Earth, Uranus radiates about the same amount of heat that it receives from the Sun. This differs from other gas giants, which all emit significantly more heat than they receive.</p>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="rings-and-moons">
+            <h2><i class="fas fa-ring"></i> Rings and Moons</h2>
+            <div class="planet-content-flex">
+                <div class="planet-text">
+                    <p>Uranus has a system of rings and moons that, like the planet itself, orbit nearly perpendicular to its path around the Sun.</p>
+                    
+                    <h3>The Ring System:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Discovery:</strong> Found in 1977 when astronomers observed Uranus passing in front of a star</li>
+                        <li><i class="fas fa-circle"></i> <strong>Composition:</strong> Dark particles ranging from dust-sized to boulder-sized, possibly with organic compounds</li>
+                        <li><i class="fas fa-circle"></i> <strong>Structure:</strong> 13 distinct rings, much darker and narrower than Saturn's</li>
+                    </ul>
+                    
+                    <h3>Notable Moons:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Titania:</strong> The largest moon of Uranus, showing evidence of past geological activity</li>
+                        <li><i class="fas fa-circle"></i> <strong>Miranda:</strong> Despite its small size, has one of the most extreme and varied terrains in the solar system</li>
+                        <li><i class="fas fa-circle"></i> <strong>Oberon:</strong> The second-largest moon, heavily cratered with a large mountain</li>
+                        <li><i class="fas fa-circle"></i> <strong>Ariel:</strong> Shows signs of recent geologic resurfacing</li>
+                        <li><i class="fas fa-circle"></i> <strong>Umbriel:</strong> The darkest of the major moons with an unusual bright ring on its surface</li>
+                    </ul>
+                    
+                    <p>All of Uranus's major moons are named after characters from the works of William Shakespeare and Alexander Pope, continuing a literary naming tradition that differs from the mythological names used for most other planets' moons.</p>
+                </div>
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/uranus/uranus_rings.jpg" alt="Uranus Rings" class="planet-side-image">
+                    <p class="image-caption">Uranus's ring system, imaged in infrared by the Keck Observatory.</p>
+                </div>
+            </div>
+            <div class="gallery-container">
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/uranus/miranda.jpg" alt="Miranda">
+                    <figcaption class="image-caption">Miranda, showing its bizarre "Frankenstein" terrain of jumbled features.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/uranus/titania.jpg" alt="Titania">
+                    <figcaption class="image-caption">Titania, the largest moon of Uranus.</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="../../assets/planets/uranus/oberon.jpg" alt="Oberon">
+                    <figcaption class="image-caption">Oberon, the outermost of the five major moons.</figcaption>
+                </figure>
+            </div>
+        </section>
+        
+        
+        <section class="planet-section" id="exploration">
+            <h2><i class="fas fa-rocket"></i> Exploring Uranus</h2>
+            <div class="planet-content-flex">
+                <div class="planet-image-container">
+                    <img src="../../assets/planets/uranus/voyager2_uranus_flyby.jpg" alt="Voyager 2 Flyby" class="planet-side-image">
+                    <p class="image-caption">Artist's conception of Voyager 2's flyby of Uranus in 1986.</p>
+                </div>
+                <div class="planet-text">
+                    <p>Uranus remains one of the least explored planets in our solar system, with only a single spacecraft having ever visited it.</p>
+                    
+                    <h3>The Voyager 2 Flyby:</h3>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Date:</strong> January 24, 1986</li>
+                        <li><i class="fas fa-circle"></i> <strong>Closest Approach:</strong> 81,500 km (50,600 miles) from Uranus's cloud tops</li>
+                        <li><i class="fas fa-circle"></i> <strong>Duration:</strong> Just 5.5 hours of close observations during a flyby</li>
+                        <li><i class="fas fa-circle"></i> <strong>Discoveries:</strong> Ten new moons, two new rings, and the planet's unique magnetic field</li>
+                    </ul>
+                    
+                    <h3>Future Missions:</h3>
+                    <p>Scientists have proposed several dedicated missions to Uranus, including:</p>
+                    <ul class="planet-facts-list">
+                        <li><i class="fas fa-circle"></i> <strong>Uranus Orbiter and Probe:</strong> A high-priority mission recommended by NASA's Planetary Science Decadal Survey (2023-2032)</li>
+                        <li><i class="fas fa-circle"></i> <strong>Proposed Launch:</strong> Potentially in the 2030s, with arrival around 2044-2046</li>
+                        <li><i class="fas fa-circle"></i> <strong>Mission Goals:</strong> Study Uranus's interior, atmosphere, magnetosphere, rings, and moons</li>
+                    </ul>
+                    
+                    <p>A dedicated Uranus mission would help answer fundamental questions about ice giant planets, which are common in our galaxy but poorly understood compared to gas giants and rocky planets.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="planet-navigation">
+            <a href="saturn.html" class="nav-button prev-planet"><i class="fas fa-arrow-left"></i> Saturn</a>
+            <a href="../planets.html" class="nav-button back-to-planets"><i class="fas fa-th"></i> All Planets</a>
+            <a href="neptune.html" class="nav-button next-planet">Neptune <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-meteor"></i>
+                    <span>Astronomy Project</span>
+                </div>
+            </div>
+            <p class="copyright">Created by: Jonah & Micah</p>
+        </div>
+    </footer>
+    
+    <div class="floating-particles"></div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+    
+    <script src="../main.js"></script>
+    <script src="../particles.js"></script>
+</body>
+</html>
